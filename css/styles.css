@@ -47,17 +47,17 @@ transition-delay:
 :root {
     /* Colors */
     --white: #fff;
-    --black-1: #111827;
-    --black-2: #28313E;
-    --black-3: #3E4651;
-    --gray: #707C8C;
-    --gray-2: #DDE1F6;
-    --gray-3: #F0F2FA;
-    --brand: #247e8d;
-    --brand-2: #4F97A5;
-    --brand-3: #1B9AAA;
-    --brand-4: #DFECEE;
-    --brand-5: #2697AA;
+    --black-1: #202020;
+    --black-2: #4b4b4b;
+    --black-3: #b7b7b7;
+    --gray: #f8f8f8;
+    --gray-2: #ededed;
+    --card-1: #771660;
+    --card-2: #9d305b;
+    --prim-1: #8a245e;
+    --prim-2: #c72b68;
+    --sec-1: #c52b68;
+    --sec-2: #ffdeeb;
   
      /* Global styles */
      --max-width: 1160px;
@@ -99,7 +99,7 @@ body {
     background-color: #ffffff;
     font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
     line-height: 1.5;
-    font-size: 20px;
+    font-size: 18px;
    
    
 }
@@ -136,9 +136,8 @@ a:hover {
 /* #endregion */
 /* #region Fonts */
 h1 {
-    font-size:var(--font-xxxl);
-    line-height: 1;
-    letter-spacing: var(--letter-spacing-h1);
+    font-size:var(--font-xl);
+    line-height: 1.2;
     font-weight: 700;
     color: var(--black-1);
     margin: 0;
@@ -251,48 +250,56 @@ h1 {
   
   .button-secondary, .button-secondary:visited {
     align-items: center;
-    background-color: var(--black-1);
+    background: linear-gradient(to right, #8e2de2, #4a00e0); /* Gradient */
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     box-sizing: border-box;
-    color: var(--white);
+    color: ghostwhite;
     cursor: pointer;
     display: flex;
-    flex-direction: column;
     font-size: 18px;
     font-weight: 400;
     height: 52px;
     justify-content: center;
-    line-height: 1;
     max-width: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 0.8em 1.2em;
     text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  .button-secondary:active {
-    outline: 0;
-    background-color: var(--black-3);
-  }
-  .button-secondary:hover {
-    outline:0;
-    background: linear-gradient(45deg, var(--black-1), var(--black-2), var(--black-3));
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.button-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background: #000;
+  font-size: 18px;
     font-weight: 400;
-    color: var(--white);
-    transition: all 350ms;
-    transition-timing-function: ease-in-out;
-  }
-  .button-secondary span {
-    transition: all 350ms;
-    transition-timing-function: ease-in-out;
-  }
-  .button-secondary:hover span{
-    transform: scale(.9);
-  
-  }  
+    height: 52px;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  z-index: 0;
+}
+.button-secondary:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
 
+.button-secondary span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s ease-in-out;
+}
+
+.button-secondary:hover span {
+  transform: none;
+}
+
+.button-secondary:active {
+  transform: scale(0.95);
+}
 /* #endregion */
 /* #region Navigation bar */
 header {
@@ -332,7 +339,7 @@ nav{
 }
 .logo {
     display: flex;
-    max-width: 120px;
+    max-width: 176px;
     height: 100%;
     padding-left: 16px;
     padding-top: 18px;
@@ -404,10 +411,7 @@ nav{
     justify-content: center; /* Centers horizontally */
     text-align:left; 
   overflow: hidden;
-    background: url(../img/Green\ background.svg);
-    background-repeat: repeat-x; 
-    background-clip: border-box;
-    /* Background image */
+    background-color: var(--white);
   
 }
 
@@ -419,7 +423,6 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     padding-top: 100px;
-    padding-bottom: 32px;
 }
 
 .hero-cover {
@@ -454,42 +457,18 @@ nav{
 
 }
 #hero-p { 
-    color: var(--black-1);
+    color: var(--black-2);
     padding: 0;
 
    
 }
-#hero-img {
+#hero-shape {
     overflow-x: visible;
     padding: 0px;
     min-width: 90%
   }
 
 
-
-.hero-tag {
-    display: flex;
-    flex-flow: wrap;    
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
-    padding-top: 24px;
-}
-#tag-detail {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--black-3);
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-}
-.emoji{
-    display: inline-block;
-    max-width:24px;
-    padding-left: 8px;
-    vertical-align: middle;
-}
 .hero-intro {
     display: flex;
     flex-direction: row;
@@ -524,7 +503,7 @@ section {
   background-size: auto 100%;
 }
 .pale-gradient {
-    background: linear-gradient( #FAFCFC,#FFFFFF);
+    background-color: var(--gray)
 
 }
 .white {
