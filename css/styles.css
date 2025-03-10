@@ -122,15 +122,10 @@ ul {
     width: 100%;
 }
 a {
-    color: var(--black-3);
     line-height: 1;
     text-decoration: none
 }
 
-a:hover {
-    color: #00344f;
-    font-weight: bold;
-}
 
 
 /* #endregion */
@@ -248,58 +243,52 @@ h1 {
     transform: scale(.9);
   }
   
-  .button-secondary, .button-secondary:visited {
-    align-items: center;
-    background: linear-gradient(to right, #8e2de2, #4a00e0); /* Gradient */
-    border: none;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: ghostwhite;
-    cursor: pointer;
-    display: flex;
-    font-size: 18px;
-    font-weight: 400;
-    height: 52px;
-    justify-content: center;
-    max-width: 100%;
-    padding: 0.8em 1.2em;
-    text-decoration: none;
+  .button-secondary {
     position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-}
-.button-secondary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -10%;
-  width: 120%;
-  height: 100%;
-  background: #000;
-  font-size: 18px;
     font-weight: 400;
-    height: 52px;
-  transform: skew(30deg);
-  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
-  z-index: 0;
-}
-.button-secondary:hover::before {
-  transform: translate3d(100%, 0, 0);
-}
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: ghostwhite;
+    overflow: hidden;
+  }
 
 .button-secondary span {
   position: relative;
   z-index: 10;
-  transition: color 0.4s ease-in-out;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+.button-secondary::before,
+.button-secondary::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.button-secondary::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
-.button-secondary:hover span {
-  transform: none;
+.button-secondary:hover::before {
+  transform: translate3d(100%, 0, 0);
 }
 
 .button-secondary:active {
   transform: scale(0.95);
 }
+
 /* #endregion */
 /* #region Navigation bar */
 header {
