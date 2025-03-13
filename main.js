@@ -29,3 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     animElements.forEach(el => observer.observe(el));
 });
+
+const toggles = document.querySelectorAll(".faq-toggle");
+
+toggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+        toggle.parentNode.classList.toggle("active")
+    })
+})
