@@ -488,6 +488,8 @@ section {
     flex-direction: column;
     padding-top: 120px;
     padding-bottom: 120px;
+    padding-left: 16px;
+    padding-right: 16px;
     align-items: center; /* Centers vertically */
     justify-content: center; /* Centers horizontally */
     text-align:left; 
@@ -527,6 +529,7 @@ section {
   display: flex;
   font-size: 18px;
   color: var(--black-2);
+ text-align: center;
 }
 
 .buttons-nested {
@@ -557,21 +560,36 @@ section {
   padding-top: 40px;
 }
   */
+.cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
 .experience {
-  max-width: 520px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  flex-wrap: nowrap;
+  gap: 16px;
+  flex: 1 1 540px;
+  max-width: 100%;
+
 }
 .faq {
 background-color: var(--white);
 border-radius: 4px;
 padding: 24px;
+min-height: 67px;
 position: relative;
+width: 100%;
 }
 .faq-title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   margin-right: 3em;
   }
   .faq-text{
@@ -581,6 +599,10 @@ position: relative;
   margin: 24px 0 0;
   display: none;
   }
+
+.faq.active{
+height: 233px;
+}
 .faq.active .faq-text {
 display: block;
 }
