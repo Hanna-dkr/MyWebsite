@@ -142,7 +142,7 @@ h1 {
   }
   h2 {
     display: inline-block;
-    font-size: var(--font-xxl);
+    font-size: var(--font-xl);
     line-height: 1;
     font-weight: 700;
     margin: 0;
@@ -616,8 +616,8 @@ box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.02);
   color: var(--black-1);
   text-decoration: underline;
   padding: 12px;
-  margin: -12px;
-  border-radius: px;
+  margin:-12px;
+  border-radius: 4px;
   width:100%;
 }
 .faq:hover{
