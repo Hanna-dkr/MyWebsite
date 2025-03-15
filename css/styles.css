@@ -15,6 +15,7 @@
     --prim-1: #8a245e;
     --prim-2: #c72b68;
     --sec-1: #E6EAEF;
+    --yellow: #F8D377;
   
      /* Global styles */
      --max-width: 1160px;
@@ -587,6 +588,86 @@ transition: 0.2s linear;
 /* #endregion */
 
 /* #region CaseStudy Repetitive Components */
+.cs-intro {
+  width: 100%; /* Full width */
+  height: 80vh; /* Full viewport height */
+  min-height: 80vh; /* Ensures it always covers the viewport */
+  display: flex; /* Enables centering */
+  flex-direction: column;
+  align-items: center; /* Centers vertically */
+  justify-content: center; /* Centers horizontally */
+  text-align:left; 
+overflow: hidden;
+  background-color: var(--yellow);
+  position: relative;
+}
+.cs-content {
+  display: flex;
+  max-width: 1160px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.cs-cover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  max-width: 1160px;
+  position: relative;
+}
+.cs-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-left: 16px;
+  gap: 32px;
+min-width: 50%;
+max-width:50%;
+ z-index: 1;
+}
+.cs-header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.cs-tagline {
+  display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 24px;
+}
+#cs-p { 
+  color: var(--black-2);
+  font-size: 18px;
+  padding: 0; 
+}
+#cs-chip {
+  display: inline-block;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.26);
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-top: 2px;
+  padding-right: 8px;
+  padding-bottom: 2px;
+}
+.cs-img {
+  position: absolute; 
+  width: 95%; 
+  height: auto;
+  bottom: 0;
+  left: 0;
+z-index: 1;
+padding-left: 40px;
+}
+
 /* #endregion */
 
 /* #region CaseStudy NUNU */
