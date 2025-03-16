@@ -30,8 +30,8 @@
     --font-xs: 20px;
     --font-s: 24px;
     --font-m: 28px;
-    --font-l: 32px;
-    --font-xl: 38px;
+    --font-l: 34px;
+    --font-xl: 40px;
     --font-xxl: 42px;
     --font-xxxl: 56px;
        
@@ -110,7 +110,7 @@ h1 {
   h3 {
     font-size: var(--font-s);
     line-height: 1.2;
-    font-weight: 400;
+    font-weight: 600;
     margin: 0;
     padding: 0;
   }
@@ -714,7 +714,7 @@ padding: 16px;
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
-      gap: 80px;
+      gap: 60px;
       padding-left: 16px;
       padding-right: 16px;
 }
@@ -731,7 +731,7 @@ color: var(--black-2);
 }
 .cg-title{
 display: flex;
-text: center;
+text-align: center;
 line-height: 1.2;
 color: var(--black);
 }
@@ -748,7 +748,7 @@ color: var(--black);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-evenly;
   gap: 24px;
 min-width: 50%;
@@ -759,7 +759,7 @@ max-width:50%;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
-gap: 8px;
+gap: 16px;
 }
 .cg-subheader {
   display: block;
@@ -776,6 +776,7 @@ b {
 }
 .cg-img {
   width: 100%;
+  height: auto;
 }
 .invert{
   color: var(--white);
