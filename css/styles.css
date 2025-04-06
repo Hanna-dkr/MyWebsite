@@ -71,6 +71,7 @@ main {
    } 
 
 ul {
+  list-style-type: disc;
     margin: 0;
     padding: 0;
 }
@@ -124,6 +125,14 @@ h1 {
     font-size: var(--font-xs);
     line-height: 1;
     font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+  h5{
+    display: inline-block;
+    font-size: var(--font-m);
+    line-height: 1;
+    font-weight: 600;
     margin: 0;
     padding: 0;
   }
@@ -646,6 +655,7 @@ max-width:50%;
     justify-content: space-evenly;
     padding-left: 16px;
     gap: 16px;
+    color: var(--nunu-dark);
 }
 .cs-details {
   display: flex;
@@ -674,7 +684,7 @@ padding: 16px;
 }
 .cs-subheader {
   display: block;
-  color: var(--black);
+  color: var(--nunu-dark);
 }
 .cs-roles {
   display: flex;
@@ -683,21 +693,22 @@ padding: 16px;
   gap: 8px;
 }
 #cs-p { 
-  color: var(--black-2);
+  color: var(--nunu-dark-grey);
   font-size: 18px;
   padding: 0; 
 }
 .cs-chip {
   display: inline block;
   font-size: 18px;
-  color: var(--black-2);
-  background-color: var(--yellow);
+  color: var(--nunu-dark);
+  background-color: var(--nunu-background-1);
   border-radius: 4px;
   padding-left: 8px;
   padding-top: 2px;
   padding-right: 8px;
   padding-bottom: 2px;
 }
+
 .cs-img {
   width: 100%;
 }
@@ -712,6 +723,12 @@ padding: 16px;
   align-items: center; /* Centers vertically */
   justify-content: center; /* Centers horizontally */
   text-align:left; 
+}
+.nyanga-grey {
+  background-color: var(--nunu-background-1);
+}
+.nyanga-black {
+  background-color: var(--nunu-dark);
 }
 .cg-container{
       display: flex;
@@ -729,6 +746,18 @@ padding: 16px;
   justify-content:center;
   align-items: center;
   gap: 16px;
+}
+.cs-tagline-chip {
+  display: inline block;
+  font-size: 18px;
+  color: var(--nunu-dark);
+  font-weight: 500;
+  background-color: var(--nunu-accent);
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-top: 2px;
+  padding-right: 8px;
+  padding-bottom: 2px;
 }
 .cg-tag-title{
 display: flex;
@@ -748,6 +777,15 @@ color: var(--black);
   gap: 24px;
   width: 100%;
   max-width: 1160px;
+}
+.cg-broad {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  justify-content: space-evenly;
+  gap: 24px;
+width: 100%;
 }
 .cg-copy {
   display: flex;
@@ -776,6 +814,10 @@ gap: 16px;
   font-size: 18px;
   padding: 0; 
 }
+.cg-p-accent {
+  font-size: 20px;
+  color: var(--white);
+}
 b {
   color: var(--black-1);
 }
@@ -786,6 +828,7 @@ b {
 .invert{
   color: var(--white);
 }
+
 /* #endregion */
 
 
