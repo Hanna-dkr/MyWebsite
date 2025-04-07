@@ -85,6 +85,11 @@ li.bullet {
   display: list-item;
   line-height: 1.5;
 }
+li.card{
+  display: list-item;
+  line-height: 1.5;
+  padding-left: 16px;
+}
 a {
   font-size: 18px;
     line-height: 1;
@@ -792,6 +797,7 @@ color: var(--black);
 }
 .cg-cover.padding{
   margin-top: 24px;
+  gap: 30px;
 }
 .cg-broad {
   display: flex;
@@ -865,6 +871,9 @@ b {
 }
 .cg-img-50{
   width: 30%;
+}
+.cg-img-80{
+  width: 100%;
 }
 .invert{
   color: var(--white);
