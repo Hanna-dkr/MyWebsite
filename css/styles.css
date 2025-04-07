@@ -833,6 +833,9 @@ b {
   width: 100%;
   height: auto;
 }
+.cg-img-50{
+  width: 30%;
+}
 .invert{
   color: var(--white);
 }
