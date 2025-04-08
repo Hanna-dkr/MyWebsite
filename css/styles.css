@@ -135,7 +135,7 @@ h1 {
   }
   h5{
     display: inline-block;
-    font-size: var(--font-m);
+    font-size: 26px;
     line-height: 1;
     font-weight: 600;
     margin: 0;
@@ -169,6 +169,7 @@ h1 {
     padding: 0;
     font-size: 18px;
   }
+  
 /* #endregion */
 /* #region Buttons */
 /* primary button */
@@ -504,13 +505,16 @@ width: 225px;
 
 /* #endregion */
 /* #region Where I have experience */ 
+.special{
+  padding-bottom: 40px;
+}
 .cards {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
-  padding-top: 40px;
+  padding-top: 0px;
   padding-bottom: 40px;
 }
 .experience {
@@ -646,7 +650,7 @@ transition: 0.2s linear;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 48px;
 min-width: 50%;
 max-width:50%;
@@ -766,19 +770,19 @@ padding: 16px;
 }
 .cg-tag-title{
 display: flex;
-color: var(--black-2);
+color: var(--nunu-dark);
 }
 .cg-title{
 display: flex;
 text-align: center;
 line-height: 1.2;
-color: var(--black);
+color: var(--nunu-dark);
 }
 .cg-title-left{
   display: flex;
   text-align: left;
   line-height: 1.2;
-  color: var(--black);
+  color: var(--nunu-dark);
   }
 .cg-title-invert{
   display: flex;
@@ -786,18 +790,25 @@ color: var(--black);
   line-height: 1.2;
   color: var(--white);
   }
+  .cg-insight{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 .cg-cover {
   display: flex;
   flex-direction: row;
-  justify-content: stretch; 
-  align-items: flex-start;
+  justify-content: space-between; 
+  align-items: stretch;
   gap: 24px;
-  width: 100%;
   max-width: 1160px;
+  margin: 0 auto;
 }
 .cg-cover.padding{
-  margin-top: 24px;
-  gap: 30px;
+  margin-top: 40px;
+  gap: 24px;
 }
 .cg-broad {
   display: flex;
@@ -808,15 +819,15 @@ color: var(--black);
   gap: 24px;
 width: 100%;
 }
+
 .cg-copy {
   display: flex;
+  flex: 1 1 0;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: stretch;
-  justify-content: space-evenly;
-  gap: 24px;
-min-width: 50%;
-max-width:50%;
+  padding: 0px;
+  box-sizing: border-box;
+  gap: 16px;
 }
 .cg-cards-row{
   display: grid;
@@ -841,6 +852,33 @@ max-width:50%;
   justify-content: space-between;
 gap: 16px;
 }
+.cg-text-block-grey{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+gap: 16px;
+background-color: var(--nunu-background-1);
+border-radius: 8px;
+padding: 16px;
+flex: 1 1 0;
+min-width: 0;
+}
+.cg-text-block-white {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+gap: 16px;
+background-color: var(--white);
+border-radius: 8px;
+padding-left: 16px;
+padding-right: 16px;
+padding-top:24px;
+padding-bottom: 0;
+flex: 1 1 0;
+min-width: 0;
+}
 .cg-text-block-condensed {
   display: flex;
   flex-direction: column;
@@ -851,19 +889,24 @@ gap: 4px;
 .cg-subheader {
   display: block;
   line-height: 1.5;
-  color: var(--black);
+  color: var(--nunu-dark);
 }
 .cg-p { 
-  color: var(--black-2);
+  color: var(--nunu-dark-grey);
   font-size: 18px;
   padding: 0; 
+}
+.cg-p-padding {
+padding-left: 16px;
+padding-right: 16px;
+color: var(--nunu-dark-grey);
 }
 .cg-p-accent {
   font-size: 20px;
   color: var(--white);
 }
 b {
-  color: var(--black-1);
+  color: var(--nunu-dark);
 }
 .cg-img {
   width: 100%;
@@ -883,15 +926,53 @@ b {
 
 
 .cg-p b{
-  color: var(--black-1);
+  color: var(--nunu-dark);
   font-weight: 700;
 }
 .cg-p.invert b{
   color: var(--nunu-accent);
 }
 .cs-p b{
-  color: var(--black-1) ;
+  color: var(--nunu-background-1) ;
   font-weight: 700;
+}
+.cg-quote-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  padding: 8px;
+}
+.cg-quote-block{
+  flex: 1 1 50%;
+  margin: 0;
+}
+.cg-quote {
+ 
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 700px;
+  color: var(--nunu-dark);
+  border-left: 4px solid var(--nunu-accent);
+  padding-left: 16px;
+  margin: 24px 24px;
+  line-height: 1.6;
+}
+.cg-quote-img{
+  flex: 1 1 50%;
+  max-width: 50%;
+  padding: 40px;
+
+}
+
+.cg-quote footer {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--nunu-dark-grey);
 }
 
 
