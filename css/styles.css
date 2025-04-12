@@ -766,6 +766,16 @@ padding: 24px;
 /* #endregion */
 
 /* #region CaseStudy Intro Components */
+.cs-section {
+  width: 100%; /* Full width */
+  display: flex; /* Enables centering */
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  align-items: center; /* Centers vertically */
+  justify-content: center; /* Centers horizontally */
+  text-align:left; 
+}
 .cs-intro-nunu {
   width: 100%; /* Full width */
   height: 90vh; /* Full viewport height */
@@ -780,19 +790,32 @@ padding: 24px;
 .cs-content {
   display: flex;
   max-width: 1160px;
+  width: 100%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  padding-top: 43px;
+  gap: 60px;
+  padding: 24px;
 }
+.cs-content.light{
+  background-color: #f3f5f7;
+}
+.cs-content.medium{
+  background-color: #B5C1CE;
+}
+.cs-content.dark{
+  background-color: #131928;
+}
+
 .cs-cover {
   display: flex;
   flex-direction: row;
   justify-content: space-between; 
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   max-width: 1160px;
   position: relative;
+  gap: 16px;
 }
 .cs-copy {
   display: flex;
@@ -812,13 +835,17 @@ max-width:50%;
     align-items: flex-start;
     justify-content: space-evenly;
     padding-left: 16px;
+    padding-top: 100px;
+    padding-bottom: 24px;
     gap: 16px;
     color: var(--nunu-dark);
+    text-align: center;
 }
 .cs-details {
   display: flex;
   flex-direction: column;
-justify-content: flex-start;
+justify-content: center;
+padding-bottom: 48px;
 gap: 20px;
 width: 100%;
 }
@@ -835,8 +862,8 @@ padding: 16px;
   display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 12px;
     padding-left: 16px;
 }
@@ -849,6 +876,19 @@ padding: 16px;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 8px;
+}
+.cs-comic-p{
+  color: var(--nunu-dark);
+  font-size: 20px;
+  font-style: italic;
+  padding: 0; 
+}
+.cs-comic-b{
+  color: var(--nunu-dark);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  padding: 0; 
 }
 #cs-p { 
   color: var(--nunu-dark-grey);
@@ -865,6 +905,9 @@ padding: 16px;
   padding-top: 2px;
   padding-right: 8px;
   padding-bottom: 2px;
+}
+.comic-img {
+  height: 100%;
 }
 
 .cs-img {
