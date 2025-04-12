@@ -838,7 +838,7 @@ max-width:50%;
     align-items: flex-start;
     justify-content: space-evenly;
     padding-left: 16px;
-    padding-top: 100px;
+    padding-top: 60px;
     padding-bottom: 24px;
     gap: 16px;
     color: var(--nunu-dark);
@@ -946,6 +946,10 @@ padding: 16px;
       gap: 60px;
       padding-left: 16px;
       padding-right: 16px;
+}
+.cg-container.nunu {
+  background-color: #B5C1CE;
+  border-radius: 16px;
 }
 .cg-description {
   display: flex;
