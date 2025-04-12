@@ -792,9 +792,9 @@ padding: 24px;
   max-width: 1160px;
   width: 100%;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  gap: 24px;
   padding: 24px;
 }
 .cs-content.light{
@@ -806,17 +806,20 @@ padding: 24px;
 .cs-content.dark{
   background-color: #131928;
 }
-
+.cs-content.top-pad{
+  margin-top: 24px;
+}
 .cs-cover {
   display: flex;
   flex-direction: row;
   justify-content: space-between; 
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   max-width: 1160px;
   position: relative;
-  gap: 16px;
+  gap: 24px;
 }
+
 .cs-copy {
   display: flex;
   flex-direction: column;
@@ -878,14 +881,14 @@ padding: 16px;
   gap: 8px;
 }
 .cs-comic-p{
-  color: var(--nunu-dark);
-  font-size: 20px;
+  color: #ffffff;
+  font-size: 18px;
   font-style: italic;
   padding: 0; 
 }
 .cs-comic-b{
   color: var(--nunu-dark);
-  font-size: 20px;
+  font-size: 22px;
   font-style: italic;
   font-weight: 700;
   padding: 0; 
@@ -924,6 +927,9 @@ padding: 16px;
   align-items: center; /* Centers vertically */
   justify-content: center; /* Centers horizontally */
   text-align:left; 
+}
+.cg-section.dark{
+  background-color: #131928;
 }
 .nyanga-grey {
   background-color: var(--nunu-background-1);
