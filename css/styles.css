@@ -862,8 +862,8 @@ border-radius: 16px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: flex-start;
-    align-items: flex-start;
+  justify-content: center;
+    align-items: center;
     justify-content: space-evenly;
     padding-left: 16px;
     padding-top: 60px;
@@ -902,6 +902,7 @@ padding: 16px;
   display: block;
   color: var(--nunu-dark);
   text-align: center;
+  line-height: 1.5;
 }
 .cs-roles {
   display: flex;
@@ -994,8 +995,10 @@ padding: 16px;
       padding-right: 16px;
 }
 .cg-container.nunu {
-  background-color: #B5C1CE;
+  background-color: #ffffff;
   border-radius: 16px;
+  padding-top: 120px;
+  padding-bottom: 100px;
 }
 .cg-description {
   display: flex;
