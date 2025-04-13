@@ -813,13 +813,28 @@ padding: 24px;
   display: flex;
   flex-direction: row;
   justify-content: space-between; 
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   max-width: 1160px;
   position: relative;
   gap: 24px;
+
 }
 
+.cs-copy-d {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+min-width: 50%;
+max-width:50%;
+background-color: #262F39;
+margin-top: 16px;
+padding: 16px;
+border-radius: 16px;
+}
 .cs-copy {
   display: flex;
   flex-direction: column;
@@ -829,6 +844,19 @@ padding: 24px;
   gap: 48px;
 min-width: 50%;
 max-width:50%;
+}
+.cs-copy-blurb{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+min-width: 100%;
+max-width:100%;
+background-color: var(--nunu-accent);
+margin-top: 16px;
+padding: 16px;
+border-radius: 16px; 
 }
 .cs-header {
   display: flex;
@@ -873,6 +901,7 @@ padding: 16px;
 .cs-subheader {
   display: block;
   color: var(--nunu-dark);
+  text-align: center;
 }
 .cs-roles {
   display: flex;
@@ -893,6 +922,7 @@ padding: 16px;
   font-weight: 700;
   padding: 0; 
 }
+
 #cs-p { 
   color: var(--nunu-dark-grey);
   font-size: 18px;
@@ -902,12 +932,23 @@ padding: 16px;
   display: inline block;
   font-size: 18px;
   color: var(--nunu-dark);
-  background-color: var(--nunu-background-1);
   border-radius: 4px;
   padding-left: 8px;
   padding-top: 2px;
   padding-right: 8px;
   padding-bottom: 2px;
+}
+.cs-blurb-b{
+  color: var(--nunu-dark);
+  font-size: 32px;
+  font-weight: 400;
+  padding: 0; 
+}
+.cs-blurb{
+  color: var(--nunu-dark);
+  font-size: 22px;
+  font-weight: 400;
+  padding: 0; 
 }
 .comic-img {
   height: 100%;
@@ -930,12 +971,17 @@ padding: 16px;
 }
 .cg-section.dark{
   background-color: #131928;
+  width: 98%;
+  border-radius: 16px;
 }
 .nyanga-grey {
   background-color: var(--nunu-background-1);
 }
 .nyanga-black {
   background-color: var(--nunu-dark);
+}
+.medium{
+  background-color: #B5C1CE;
 }
 .cg-container{
       display: flex;
