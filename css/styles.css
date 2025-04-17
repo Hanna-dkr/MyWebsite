@@ -1738,3 +1738,90 @@ Re-look children behaviour
     padding: 10px 0;
     transition: -5s ease-in-out;
 }
+/* --- Discovery grid --- */
+/* Discovery grid */
+.discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Card container */
+.discovery-card {
+  background-color: var(--nunu-background-1);
+  border: 1px solid rgba(76,79,86,0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: none;
+  position: relative;
+}
+
+/* Numbered icon */
+.discovery-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--nunu-accent);
+  color: var(--white);
+  font-weight: 700;
+  margin-right: 0.75rem;
+  font-size: 1rem;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+
+/* Push the heading over to make room for the icon */
+.discovery-card h5 {
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+  margin-left: 2.5rem;
+  margin-bottom: 1rem;   /* ← extra space */
+  color: var(--nunu-dark);
+}
+
+/* Paragraph text */
+.discovery-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--nunu-dark-grey);
+  margin-left: 2.5rem;
+}
+
+/* Full‑width map */
+.discovery-map {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.discovery-map img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+.map-caption {
+  font-size: 0.875rem;
+  color: var(--nunu-dark);
+  margin-left: 2.5rem;
+}
+
+/* Family photo spans two columns */
+.discovery-family {
+  grid-column: span 2;
+}
+.discovery-family img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* Blockquote styling (unchanged) */
+.cg-quote {
+  font-style: italic;
+  border-left: 4px solid var(--nunu-accent);
+  padding-left: 1rem;
+  margin: 1rem 0 1rem 2.5rem;
+}
