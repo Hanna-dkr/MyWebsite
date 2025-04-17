@@ -775,6 +775,7 @@ padding: 24px;
   align-items: center; /* Centers vertically */
   justify-content: center; /* Centers horizontally */
   text-align:left; 
+  background-color: #E2E7EB;
 }
 .cs-intro-nunu {
   width: 100%; /* Full width */
@@ -907,7 +908,7 @@ padding: 16px;
   padding-bottom: 2px;
 }
 .comic-img {
-  height: 100%;
+width: 100%;
 }
 
 .cs-img {
