@@ -1825,3 +1825,232 @@ Re-look children behaviour
   padding-left: 1rem;
   margin: 1rem 0 1rem 2.5rem;
 }
+/* Principles trial */
+/* --- grid container --- */
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* --- cards --- */
+.design-card {
+  border: 1px solid var(--nunu-dark-grey);
+  border-radius: 8px;
+  padding: 16px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* --- numbered icon + header --- */
+.design-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.design-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--nunu-accent);
+  color: var(--white);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+.design-card h4 {
+  font-size: 1.125rem;  /* slightly larger subhead */
+  margin: 0;
+}
+
+/* --- lists --- */
+.design-card ul {
+  padding-left: 1rem;
+  margin: 0;
+}
+.design-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* --- images inside cards --- */
+.design-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-top: auto;
+}
+
+/* --- full‑width images --- */
+.design-fullwidth-image {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.design-fullwidth-image.double-width {
+  grid-column: span 2;
+}
+.design-fullwidth-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+/* Deliverables grid */
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* Each item */
+.deliverable-item img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+.deliverable-item p {
+  margin-top: 12px;
+}
+
+/* Make the final concept span the full width */
+.deliverable-item.final {
+  grid-column: 1 / -1;
+}
+/* Lessons timeline container */
+.lessons-timeline {
+  position: relative;
+  padding-left: 40px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.lessons-timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--nunu-accent);
+}
+
+/* Each step */
+.lesson-step {
+  display: flex;
+  align-items: flex-start;
+}
+.step-icon {
+  flex: 0 0 40px;
+  height: 40px;
+  background: var(--nunu-accent);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-right: 16px;
+}
+.step-content h4 {
+  margin-bottom: 8px;
+}
+
+/* Inverted text on dark background */
+.invert { color: var(--white) !important; }
+.cg-p-invert {
+  margin: 0;
+  color: var(--white);
+  line-height: 1.5;
+}
+/* ——— Research Process Timeline ——— */
+.research-process {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.rp-timeline {
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.rp-timeline::before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--nunu-accent);
+}
+
+.rp-step {
+  display: grid;
+  grid-template-columns: 80px 1fr 300px;
+  gap: 24px;
+  align-items: start;
+  position: relative;
+}
+
+/* Numbered circle */
+.rp-icon {
+  grid-column: 1;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--nunu-accent);
+  color: var(--white);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  position: relative;
+  top: 0;
+}
+
+/* Text content */
+.rp-content {
+  grid-column: 2;
+}
+.rp-content h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+.rp-content .cg-p {
+  line-height: 1.6;
+}
+
+/* Image block */
+.rp-image {
+  grid-column: 3;
+  text-align: center;
+}
+.rp-image img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+.rp-image .caption {
+  font-size: 0.875rem;
+  color: var(--nunu-dark);
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .rp-step {
+    grid-template-columns: 48px 1fr;
+  }
+  .rp-image {
+    grid-column: 1 / -1;
+  }
+}
