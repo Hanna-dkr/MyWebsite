@@ -1315,6 +1315,11 @@ gap: 4px;
   font-size: 18px;
   padding: 0; 
 }
+.cg-p-end{
+  color: var(--nunu-dark-grey);
+  font-size: 18px;
+  padding-top: 24px;
+}
 .cg-p-italics {
   color: var(--nunu-dark-grey);
   font-size: 18px;
@@ -1601,6 +1606,12 @@ b {
 }
 
 /* #endregion */
+
+/* #region deliverables */
+
+
+/* #endregion */
+
 /* #region Hero Animations */
 /* hero */
 .text-focus-in {
@@ -2180,11 +2191,12 @@ padding-left: 52px;
 .lessons-timeline::before {
   content: "";
   position: absolute;
-  left: 20px;
+  left: 60px;
   top: 0;
   bottom: 0;
   width: 4px;
   background: var(--nunu-accent);
+  z-index: -1;
 }
 
 /* Each step */
@@ -2196,7 +2208,7 @@ padding-left: 52px;
   flex: 0 0 40px;
   height: 40px;
   background: var(--nunu-accent);
-  color: var(--white);
+  color: var(--nunu-dark);
   border-radius: 50%;
   display: flex;
   align-items: center;
