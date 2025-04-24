@@ -758,10 +758,9 @@ transition: linear 0.2s;
 }
 
 .work-card-img img{
-  max-height: 100%;
+  max-height: auto;
   max-width: 100%;
-object-fit: contain;
-padding: 24px;
+object-fit:fill;
 }
 .work-tagline {
   display: flex;
