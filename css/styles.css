@@ -283,7 +283,7 @@ transition: linear 0.2s;
   border-radius: 4px;
   cursor: pointer;
   transition: 0.4s linear;
-  margin-top: auto;
+margin-bottom: 24px;
 }
 .back-link:hover{
   background-color: #B0E9D1;
