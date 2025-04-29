@@ -28,6 +28,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }, observerOptions);
 
     animElements.forEach(el => observer.observe(el));
+
+    // ── NEW: hero observer to show/hide the sidebar ──
+    const sidebar = document.querySelector('.case-sidebar');
+    const hero = document.querySelector('.nunu-hero');
+    if (sidebar && hero) {
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // hero is (even partly) on-screen → hide sidebar
+                    sidebar.classList.remove('visible');
+                } else {
+                    // hero is completely off-screen → show sidebar
+                    sidebar.classList.add('visible');
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0,
+            rootMargin: '-80px 0px 0px 0px'
+            // shrink top edge by heroHeight+gap so the switch happens just as hero scrolls under header
+        });
+        heroObserver.observe(hero);
+    }
 });
 
 const toggles = document.querySelectorAll(".faq-toggle");
