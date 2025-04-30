@@ -29,27 +29,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
     animElements.forEach(el => observer.observe(el));
 
-    // ── NEW: hero observer to show/hide the sidebar ──
+    // ── NEW: show when hero is 60% out, hide when it’s back at 30% ──
     const sidebar = document.querySelector('.case-sidebar');
     const hero = document.querySelector('.nunu-hero');
+
     if (sidebar && hero) {
-        const heroObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // hero is (even partly) on-screen → hide sidebar
-                    sidebar.classList.remove('visible');
-                } else {
-                    // hero is completely off-screen → show sidebar
-                    sidebar.classList.add('visible');
-                }
-            });
+        // 1) Show sidebar when hero top crosses the 60% line
+        const showObserver = new IntersectionObserver(([entry]) => {
+            if (!entry.isIntersecting) {
+                sidebar.classList.add('visible');
+            }
         }, {
             root: null,
             threshold: 0,
-            rootMargin: '-80px 0px 0px 0px'
-            // shrink top edge by heroHeight+gap so the switch happens just as hero scrolls under header
+            // move the top of the viewport down by 60%
+            rootMargin: '-60% 0px 0px 0px'
         });
-        heroObserver.observe(hero);
+        showObserver.observe(hero);
+
+        // 2) Hide sidebar when hero top crosses back above the 30% line
+        const hideObserver = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                sidebar.classList.remove('visible');
+            }
+        }, {
+            root: null,
+            threshold: 0,
+            // move the top of the viewport down by 30%
+            rootMargin: '-30% 0px 0px 0px'
+        });
+        hideObserver.observe(hero);
     }
 });
 
