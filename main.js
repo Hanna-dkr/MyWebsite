@@ -69,3 +69,38 @@ toggles.forEach((toggle) => {
         toggle.parentNode.classList.toggle("active")
     })
 })
+    // AFTER that whole block, add your carousel script:
+    ; (function () {
+        const track = document.querySelector('.carousel-track');
+        const items = Array.from(track.children);
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        const dots = Array.from(document.querySelectorAll('.dot'));
+        const perPage = 2;
+        const pages = Math.ceil(items.length / perPage);
+        let index = 0;
+
+        function update() {
+            const w = items[0].getBoundingClientRect().width + 24;
+            track.style.transform = `translateX(${-index * perPage * w}px)`;
+
+            // toggle disabled state
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === pages - 1;
+
+            // update dots
+            dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (index > 0) { index--; update(); }
+        });
+        nextBtn.addEventListener('click', () => {
+            if (index < pages - 1) { index++; update(); }
+        });
+        dots.forEach((dot, i) => dot.addEventListener('click', () => {
+            index = i; update();
+        }));
+
+        update();
+    })();

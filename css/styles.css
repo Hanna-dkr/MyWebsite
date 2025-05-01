@@ -39,6 +39,9 @@
     --font-xl: 40px;
     --font-xxl: 42px;
     --font-xxxl: 56px;
+
+    --arrow-size: 56px;
+    --arrow-gap: 16px;
        
   }
   
@@ -1543,7 +1546,7 @@ b {
 
 .rp-step {
   display: grid;
-  grid-template-columns: 80px 1fr 500px;
+  grid-template-columns: 40px 1fr 50%;
   gap: 24px;
   align-items: start;
   position: relative;
@@ -2456,3 +2459,82 @@ padding-left: 52px;
   /* if you had display:flex here, remove it unless you really need it inside each section */
 }
 /* #endregion */
+
+
+
+.carousel {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--arrow-gap);
+  width: 100%;
+}
+.carousel-window {
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+.carousel-item {
+  flex: 0 0 calc(50% - 12px);
+  max-width: calc(50% - 12px);
+  box-sizing: border-box;
+}
+.carousel-item .design-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 320px;
+}
+
+.carousel-arrow {
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  background-color: var(--nunu-accent);
+  color: var(--nunu-dark);
+  border: none;
+  border-radius: 50%;
+  font-size: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+/* hover scales up */
+.carousel-arrow:not(:disabled):hover {
+  transform: scale(1.05);
+}
+/* active (mousedown) scales down */
+.carousel-arrow:not(:disabled):active {
+  transform: scale(0.98);
+}
+/* disabled state */
+.carousel-arrow:disabled {
+  background-color: var(--gray-2);
+  color: var(--black-3);
+  cursor: default;
+  transform: none;
+}
+
+.carousel-prev { grid-column: 1; }
+.carousel-next { grid-column: 3; }
+
+.carousel-dots {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 16px;
+}
+.dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 6px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot.active { background: #333; }
