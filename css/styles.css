@@ -76,6 +76,9 @@ ul {
     margin: 0;
     padding: 0;
 }
+.ul-top-padding{
+  padding-top: 24px;
+}
    li,
    p {
        display: inline-block;
@@ -95,6 +98,12 @@ li.bullet-52 {
   line-height: 1.5;
   padding-bottom: 12px;
   margin-left: 58px;
+}
+li.bullet-1 {
+  display: list-item;
+  line-height: 1.5;
+  padding-bottom: 16px;
+  margin-left: 16px;
 }
 li.card{
   display: list-item;
@@ -1186,12 +1195,14 @@ padding: 16px;
   font-weight: 400;
   padding: 0; 
 }
-.comic-img {
-width: 100%;
-}
 
 .cs-img {
   width: 100%;
+}
+.cs-img-deliver
+{
+  width: 100%;
+  padding-top: 24px;
 }
 
 /* #endregion */
@@ -1339,6 +1350,17 @@ color: var(--nunu-dark);
   margin-top: 40px;
   gap: 24px;
 }
+.cg-cover-deliver {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: stretch;
+  gap: 24px;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 8px;
+}
 .cg-broad {
   display: flex;
   flex-direction: column;
@@ -1348,13 +1370,32 @@ color: var(--nunu-dark);
   gap: 24px;
 width: 100%;
 }
-
+.cg-broad-deliver {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  justify-content: space-evenly;
+  gap: 24px;
+width: 100%;
+padding: 16px;
+border-radius: 8px;
+}
 .cg-copy {
   display: flex;
   flex: 1 1 0;
   flex-direction: column;
   justify-content: flex-start;
   padding: 0px;
+  box-sizing: border-box;
+  gap: 16px;
+}
+.cg-copy-deliver {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 16px;
   box-sizing: border-box;
   gap: 16px;
 }
@@ -1384,6 +1425,14 @@ width: 100%;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
+gap: 16px;
+}
+.cg-text-block-top-pad {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 16px;
 gap: 16px;
 }
 .cg-text-block-grey{
@@ -1424,6 +1473,12 @@ gap: 4px;
   display: block;
   line-height: 1.5;
   color: var(--nunu-dark);
+}
+.cg-subheader-ctr {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
 }
 .cg-subheader-list {
   display: block;
