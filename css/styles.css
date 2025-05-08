@@ -2638,6 +2638,52 @@ padding-left: 52px;
   padding-left: 186px;  
   /* if you had display:flex here, remove it unless you really need it inside each section */
 }
+@media (max-width: 1159px) and (min-width: 1024px) {
+  .case-sidebar {
+    left: 16px;
+    width: 140px; /* Optional: make it narrower */
+  }
+
+  .case-inner,
+  .sidebar-container {
+    padding-left: 156px; /* match sidebar + spacing */
+  }
+}
+@media (max-width: 1023px) {
+  .case-sidebar {
+    display: none;
+  }
+
+  .case-inner,
+  .sidebar-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .case-content {
+    padding: 0 16px; /* Add mobile-friendly spacing */
+  }
+}
+
+@media (max-width: 768px) {
+  .case-sidebar {
+    display: none;
+  }
+
+  .case-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .case-study-wrapper {
+    padding-left: 0;
+  }
+
+  .case-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 /* #endregion */
 
 
