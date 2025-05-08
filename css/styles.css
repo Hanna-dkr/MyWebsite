@@ -1296,26 +1296,46 @@ padding: 16px;
   justify-content: center; /* Centers horizontally */
   text-align:left; 
 }
-.cg-section-special {
-  width: 100%; /* Full width */
-  display: flex; /* Enables centering */
-  flex-direction: column;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  align-items: center; /* Centers vertically */
-  justify-content: center; /* Centers horizontally */
-  text-align:left; 
+@media (max-width: 1159px) and (min-width: 769px) {
+  .cg-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .cg-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 .cg-section-flow {
   width: 100%; /* Full width */
   display: flex; /* Enables centering */
   flex-direction: column;
+  margin-top: -100px;
   padding-top: 0;
-  padding-bottom: 100px;
+  padding-bottom: 140px;
   align-items: center; /* Centers vertically */
   justify-content: center; /* Centers horizontally */
   text-align:left; 
 }
+@media (max-width: 1159px) and (min-width: 769px) {
+  .cg-section-flow {
+    margin-top: -60px;
+    padding-bottom: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .cg-section-flow {
+    margin-top: -28px;
+    padding-bottom: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 .cg-section.dark{
   background-color: #131928;
   width: 98%;
@@ -1343,6 +1363,13 @@ padding: 16px;
       padding-left: 16px;
       padding-right: 16px;
 }
+@media (max-width: 768px) {
+.cg-container {
+  padding-left: 0;
+  padding-right: 0;
+  gap: 40px;
+}
+}
 .cg-container.nunu {
   background-color: #ffffff;
   border-radius: 16px;
@@ -1356,6 +1383,14 @@ padding: 16px;
   align-items: center;
   gap: 40px;
 }
+@media (max-width: 768px) {
+  .cg-description {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    gap: 24px;
+  }
+}
 .cs-tagline-chip {
   display: inline-flex;
   align-items: center;
@@ -1366,6 +1401,14 @@ padding: 16px;
   background-color: var(--nunu-accent);
   border-radius: 8px;
   padding: 4px 12px;        /* top/bottom 4px, left/right 12px */
+}
+@media (max-width: 768px) {
+.cs-tagline-chip {
+  font-size: 18px;
+  padding: 4px 10px;
+  line-height: 1.4;
+  border-radius: 8px;
+}
 }
 .cs-tagline-chip-outline {
   display: inline-flex;
@@ -1403,6 +1446,17 @@ color: var(--nunu-dark);
   line-height: 1.2;
   color: var(--white);
   }
+  @media (max-width: 768px) {
+  .cg-title,
+  .cg-title-left,
+  .cg-title-invert {
+    font-size: 28px; /* was likely 40px or more originally */
+    line-height: 1.3;
+    text-align: left; /* applies even to center-aligned titles */
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
   .cg-insight{
     display: flex;
     flex-direction: column;
@@ -1418,6 +1472,13 @@ color: var(--nunu-dark);
   gap: 24px;
   max-width: 1160px;
   margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .cg-cover {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
 }
 .cg-cover.padding{
   margin-top: 40px;
@@ -1463,6 +1524,14 @@ border-radius: 8px;
   box-sizing: border-box;
   gap: 16px;
 }
+@media (max-width: 768px) {
+  .cg-copy {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
 .cg-copy-deliver {
   display: flex;
   flex: 1 1 0;
@@ -1542,6 +1611,14 @@ min-width: 0;
   justify-content: space-between;
 gap: 4px;
 }
+@media (max-width: 768px){
+  .cg-text-block,
+  .cg-text-block-top-pad,
+  .cg-text-block-white,
+  .cg-text-block-grey {
+    padding: 0;
+  }
+}
 .cg-subheader {
   display: block;
   line-height: 1.5;
@@ -1558,6 +1635,14 @@ gap: 4px;
   line-height: 1.5;
   color: var(--nunu-dark);
   padding-bottom: 16px;
+}
+@media (max-width: 768px) {
+  .cg-subheader,
+  .cg-subheader-disc,
+  .cg-subheader-list {
+    font-size: 18px;
+    line-height: 1.5;
+  }
 }
 .cg-p { 
   color: var(--nunu-dark-grey);
@@ -1582,6 +1667,15 @@ gap: 4px;
 padding-left: 16px;
 padding-right: 16px;
 color: var(--nunu-dark-grey);
+}
+@media (max-width: 768px) {
+  .cg-p,
+  .cg-p.invert,
+  .cg-p-italics,
+  .cg-p-invert {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 .cg-p-accent {
   font-size: 20px;
@@ -2661,7 +2755,7 @@ padding-left: 52px;
   }
 
   .case-content {
-    padding: 0 16px; /* Add mobile-friendly spacing */
+    padding: 0 ; /* Add mobile-friendly spacing */
   }
 }
 
