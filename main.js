@@ -1,13 +1,14 @@
-console.log("DataQ")
+console.log("DataQ");
+
 function menuToggle() {
-    console.log("Clicked")
+    console.log("Clicked");
     var navMenu = document.getElementById("js-menu");
     console.log(navMenu.className);
-    navMenu.classList.toggle("hide")
+    navMenu.classList.toggle("hide");
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Select all elements that should animate on scroll (the container)
+    // Animate on scroll setup
     const animElements = document.querySelectorAll('.animate-on-scroll');
 
     const observerOptions = {
@@ -18,9 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            console.log('Entry with rootMargin:', entry);
             if (entry.isIntersecting) {
-                // Add "in-view" to trigger all descendant animations
                 entry.target.classList.add('in-view');
                 observer.unobserve(entry.target);
             }
@@ -29,78 +28,121 @@ document.addEventListener('DOMContentLoaded', function () {
 
     animElements.forEach(el => observer.observe(el));
 
-    // ── NEW: show when hero is 60% out, hide when it’s back at 30% ──
+    // Sidebar visibility logic
     const sidebar = document.querySelector('.case-sidebar');
     const hero = document.querySelector('.nunu-hero');
 
     if (sidebar && hero) {
-        // 1) Show sidebar when hero top crosses the 60% line
-        const showObserver = new IntersectionObserver(([entry]) => {
-            if (!entry.isIntersecting) {
-                sidebar.classList.add('visible');
-            }
-        }, {
-            root: null,
-            threshold: 0,
-            // move the top of the viewport down by 60%
-            rootMargin: '-60% 0px 0px 0px'
-        });
-        showObserver.observe(hero);
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (sidebar.getAttribute('data-manual')) return;
 
-        // 2) Hide sidebar when hero top crosses back above the 30% line
-        const hideObserver = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                sidebar.classList.remove('visible');
+                if (entry.isIntersecting) {
+                    sidebar.classList.remove('visible');
+                } else {
+                    sidebar.classList.add('visible');
+                }
+            },
+            {
+                root: null,
+                threshold: 0,
+                rootMargin: "-80px 0px 0px 0px" // Adjust for fixed header
             }
-        }, {
-            root: null,
-            threshold: 0,
-            // move the top of the viewport down by 30%
-            rootMargin: '-30% 0px 0px 0px'
-        });
-        hideObserver.observe(hero);
+        );
+
+        observer.observe(hero);
     }
+
+    // Scroll spy (active section tracking)
+    const sections = document.querySelectorAll(
+        '.cg-section, .cg-section-special, #Objective, #Lessons' // Include special & custom section IDs
+    );
+    const navLinks = document.querySelectorAll('.case-sidebar .side-button');
+
+    const sectionObserverOptions = {
+        root: null,
+        rootMargin: '-80px 0px -40% 0px', // Header offset
+        threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            const link = document.querySelector(`.case-sidebar .side-button[href="#${id}"]`);
+
+            if (entry.isIntersecting && link) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                link.classList.add('active');
+            }
+        });
+    }, sectionObserverOptions);
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // Sidebar manual trigger on click + smooth scroll fix
+    document.querySelectorAll('.case-sidebar .side-button').forEach(link => {
+        link.addEventListener('click', (e) => {
+            sidebar.classList.add('visible');
+            sidebar.setAttribute('data-manual', 'true');
+
+            // Hack: delay removes manual override
+            setTimeout(() => {
+                sidebar.removeAttribute('data-manual');
+            }, 1000);
+
+            // Hack: force scroll offset fix
+            const targetId = link.getAttribute('href').substring(1);
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                e.preventDefault();
+                const offset = 80; // header height
+                const top = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+                history.pushState(null, null, `#${targetId}`);
+            }
+        });
+    });
 });
 
+// FAQ toggle
 const toggles = document.querySelectorAll(".faq-toggle");
 
 toggles.forEach((toggle) => {
     toggle.addEventListener("click", () => {
-        toggle.parentNode.classList.toggle("active")
-    })
-})
-    // AFTER that whole block, add your carousel script:
-    ; (function () {
-        const track = document.querySelector('.carousel-track');
-        const items = Array.from(track.children);
-        const prevBtn = document.querySelector('.carousel-prev');
-        const nextBtn = document.querySelector('.carousel-next');
-        const dots = Array.from(document.querySelectorAll('.dot'));
-        const perPage = 2;
-        const pages = Math.ceil(items.length / perPage);
-        let index = 0;
+        toggle.parentNode.classList.toggle("active");
+    });
+});
 
-        function update() {
-            const w = items[0].getBoundingClientRect().width + 24;
-            track.style.transform = `translateX(${-index * perPage * w}px)`;
+// Carousel logic
+(function () {
+    const track = document.querySelector('.carousel-track');
+    const items = Array.from(track.children);
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    const perPage = 2;
+    const pages = Math.ceil(items.length / perPage);
+    let index = 0;
 
-            // toggle disabled state
-            prevBtn.disabled = index === 0;
-            nextBtn.disabled = index === pages - 1;
+    function update() {
+        const w = items[0].getBoundingClientRect().width + 24;
+        track.style.transform = `translateX(${-index * perPage * w}px)`;
 
-            // update dots
-            dots.forEach((d, i) => d.classList.toggle('active', i === index));
-        }
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === pages - 1;
 
-        prevBtn.addEventListener('click', () => {
-            if (index > 0) { index--; update(); }
-        });
-        nextBtn.addEventListener('click', () => {
-            if (index < pages - 1) { index++; update(); }
-        });
-        dots.forEach((dot, i) => dot.addEventListener('click', () => {
-            index = i; update();
-        }));
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
 
-        update();
-    })();
+    prevBtn.addEventListener('click', () => {
+        if (index > 0) { index--; update(); }
+    });
+    nextBtn.addEventListener('click', () => {
+        if (index < pages - 1) { index++; update(); }
+    });
+    dots.forEach((dot, i) => dot.addEventListener('click', () => {
+        index = i; update();
+    }));
+
+    update();
+})();

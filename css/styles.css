@@ -2402,11 +2402,14 @@ padding-left: 52px;
 .case-study-wrapper {
   position: relative;
 }
-
+.sidebar-container {
+  position: relative;
+  /* optional: give it the same left-padding your .case-inner has */
+  padding-left: 186px;
+}
 /* ── Sidebar: fixed INSIDE the 1160px column ── */
 .case-sidebar {
   position: fixed;
-  /* header is 64px tall + 16px gap */
   top: calc(64px + 32px);
   /* center the 1160px column, then offset half of the remaining space to the left */
   left: calc((100vw - 1160px) / 2);
@@ -2420,8 +2423,7 @@ padding-left: 52px;
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.1s ease;   
-  box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.04);             /* sits above everything */
+  transition: opacity 0.3s ease, transform 0.2s ease;             /* sits above everything */
 }
 .case-sidebar.visible {
   opacity: 1;
@@ -2490,7 +2492,16 @@ padding-left: 52px;
   font-weight: 700;
  background-color: var(--gray);
 }
-
+.side-button.active {
+  font-weight: 700;
+  background-color: var(--gray);
+  color: var(--black-1);
+}
+.case-sidebar .side-button.active {
+  background-color: var(--gray);
+  font-weight: 600;
+  color: var(--black-1);
+}
 
 /* ── Content: full-width sections, but inner content constrained ── */
 .case-content {
