@@ -188,6 +188,22 @@ h1 {
     margin: 0;
     padding: 0;
   }
+  @media (max-width: 1159px) {
+    h7 {
+      font-size: 42px;
+    }
+  }
+  @media (max-width: 1023px) {
+    h7 {
+      font-size: 36px;
+    }
+  }
+  @media (max-width: 767px) {
+    h7 {
+      font-size: 28px;
+      line-height: 1.3; /* Slightly more breathing room on small screens */
+    }
+  }
   
   body {
     font-size: var(--font-xxs);
@@ -314,6 +330,21 @@ transform: translate3d(100%, 0, 0);
 transform: scale(0.98);
 transition: linear 0.2s;
 }
+@media (max-width: 768px) {
+  .button-1 span,
+  .button-2 span {
+    font-size: 16px;
+    padding: 16px; /* maintain good touch size */
+  }
+}
+@media (max-width: 768px) {
+  .button-1,
+  .button-2 {
+    padding: 12px 0;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+}
 /* back button */
 .back-link{
   display: flex;
@@ -339,7 +370,19 @@ transition: linear 0.2s;
   height: auto;
   margin-right: 4px;
 }
+@media (max-width: 768px) {
+  .back-link {
+    font-size: 16px;
+    padding: 16px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
 
+  .back-icon {
+    width: 14px;
+    margin-right: 6px;
+  }
+}
 
 /* #endregion */
 /* #region Navigation bar */
@@ -892,12 +935,26 @@ object-fit:fill;
 overflow: hidden;
 background-color: #E2E7EB;
 }
+@media (max-width: 768px) {
+  .nunu-hero {
+    height: auto;
+    min-height: 100vh; /* allows it to expand */
+    padding-top: 100px; /* room for header */
+    padding-bottom: 40px; /* prevents image overlap */
+  }
+}
 .nunu-hero-content {
   display: flex;
   max-width: 1160px;
   flex-direction: column;
   justify-content: space-evenly;
   align-items:  center;
+}
+@media (max-width: 768px) {
+  .nunu-hero-content {
+    padding: 0 16px;
+    gap: 24px; /* if needed */
+  }
 }
 .nunu-hero-cover {
   display: flex;
@@ -906,6 +963,12 @@ background-color: #E2E7EB;
   justify-content:flex-start;
   align-items: flex-start;
 gap: 32px ; 
+}
+@media (max-width: 768px) {
+  .nunu-hero-cover {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
 }
 .nunu-hero-copy {
   display: flex;
@@ -919,8 +982,31 @@ min-width: 50%;
  z-index: 1;
  min-height: 100%;
 }
+@media (max-width: 1160px) {
+  .nunu-hero-copy {
+    margin-top: 180px; /* was 232px */
+  }
+}
+@media (max-width: 768px) {
+  .nunu-hero-copy {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 0; /* removes excess spacing */
+}
+
+}
 .nunu-hero-header {
   display: block;
+}
+@media (max-width: 768px) {
+  .nunu-hero-copy {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 0; /* removes excess spacing */
+  text-align: center;
+}
 }
 .hero-text-block {
   display: flex;
@@ -933,11 +1019,36 @@ gap: 16px;
   color: var(--nunu-dark);
   padding: 0;
 }
+@media (max-width: 768px) {
+  .hero-text-block {
+    gap: 12px;
+  }
+
+  .nunu-hero-p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
 #nunu-hero-img {
   overflow-x: visible;
   padding: 0px;
   min-width: 70%;
 }
+@media (max-width: 768px) {
+  #nunu-hero-img {
+    width: 100vw;
+    height: 400px; /* or whatever height looks balanced */
+  }
+  #nunu-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* ✅ Crop vertically */
+    object-position: center;
+    display: block;
+  }
+}
+
+
 .nunu-scroller{
   display: flex;
   flex-direction: row;
@@ -953,6 +1064,17 @@ gap: 16px;
   background-color: rgba(255, 255, 255, 0.20);
   border-radius: 16px;
 }
+@media (max-width: 768px) {
+  .nunu-scroller {
+    font-size: 16px;
+    margin-top: 24px;
+    padding: 12px;
+    margin-left: 0;
+    align-self: center;
+  }
+  
+}
+
 .scroller-arrow{
   display: inline-block;
   height: 20px;
