@@ -1567,14 +1567,15 @@ border-radius: 8px;
   gap: 16px;
 }
 .cg-cards-row{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 🔥 Three equal columns */
-  gap: 24px; /* Spacing between cards */
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: stretch;  
 }
 .cg-card{
   display: flex;
   flex-direction: column;
+  flex: 0 0 calc((100% - 48px) / 3);
   justify-content: flex-start;
   align-items: flex-start;
   gap: 16px;
@@ -1582,6 +1583,23 @@ border-radius: 8px;
   border-radius: 8px;
   background-color: var(--white);
   box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.05);
+}
+/* 2) Tablet (≤1023px) – two cards per row, third wraps full-width */
+@media (max-width: 1023px) {
+  .cg-card {
+    /* subtract one gap (24px) and divide by 2 */
+    flex: 0 0 calc((100% - 24px) / 2);
+  }
+  /* make the 3rd card span 100% on its own row */
+  .cg-card:nth-child(3) {
+    flex: 0 0 100%;
+  }
+}
+/* 3) Mobile (≤767px) – one card per row */
+@media (max-width: 767px) {
+  .cg-card {
+    flex: 0 0 100%;
+  }
 }
 .cg-card ul{
   list-style-position: inside;
@@ -2148,6 +2166,56 @@ margin-top: 52px;
   cursor: pointer;
 }
 .dot.active { background: #333; }
+/* ----------------------------------------------------
+   CAROUSEL: TABLET (769px – 1159px) — show 2 cards at once
+---------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1159px) {
+  .carousel-item {
+    /* two across, subtracting half the gap (24px/2) */
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+  }
+
+  /* arrows a bit smaller on narrower screens */
+  .carousel-arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 2rem;
+  }
+}
+
+/* ----------------------------------------------------
+   CAROUSEL: MOBILE (≤768px) — show 1 card at a time
+---------------------------------------------------- */
+@media (max-width: 768px) {
+  /* stack into a single column */
+  .carousel-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* tighten up the gap between slides */
+  .carousel-track {
+    gap: 16px;
+  }
+
+  /* full-width track window */
+  .carousel-window {
+    width: 100%;
+  }
+
+  /* smaller, more touch-friendly arrows */
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  /* center the dots and give a little less top-margin */
+  .carousel-dots {
+    margin-top: 12px;
+  }
+}
 
 /* #endregion */
 
