@@ -2636,7 +2636,7 @@ padding-left: 52px;
   position: fixed;
   top: calc(64px + 32px);
   /* center the 1160px column, then offset half of the remaining space to the left */
-  left: calc((100vw - 1160px) / 2);
+  left: -200px;
   width: 170px;  
   height: auto;                   /* your narrow nav width */
   padding: 8px;
@@ -2644,15 +2644,10 @@ padding-left: 52px;
   backdrop-filter: blur(20px);
   border-radius: 16px;
   z-index: 1000;    
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.2s ease;             /* sits above everything */
+  transition: left 0.4s ease; /* smooth slide in/out */           /* sits above everything */
 }
 .case-sidebar.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+    left: calc((100vw - 1160px) / 2); /* slide into fixed position */
 }
 
 /* stack your links as before */
