@@ -28,13 +28,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     animElements.forEach(el => observer.observe(el));
 
-    // Sidebar visibility logic (replaced hero observer with scrollY)
+    // Sidebar visibility logic: show when case-study-wrapper is 60% in view
     const sidebar = document.querySelector('.case-sidebar');
-    const sidebarShowThreshold = 100; // px from top
+    const wrapper = document.querySelector('.case-study-wrapper');
+    const triggerPoint = window.innerHeight * 0.2; // 40% down the viewport
 
     window.addEventListener('scroll', () => {
-        if (!sidebar || sidebar.getAttribute('data-manual')) return;
-        if (window.scrollY > sidebarShowThreshold) {
+        if (!sidebar || sidebar.getAttribute('data-manual') || !wrapper) return;
+        const wrapperTop = wrapper.getBoundingClientRect().top;
+        if (wrapperTop < triggerPoint) {
             sidebar.classList.add('visible');
         } else {
             sidebar.classList.remove('visible');
@@ -43,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Scroll spy (active section tracking)
     const sections = document.querySelectorAll(
-        '.cg-section, .cg-section-special, #Objective, #Lessons' // Include special & custom section IDs
+        '.cg-section, .cg-section-special, #Objective, #Lessons'
     );
     const navLinks = document.querySelectorAll('.case-sidebar .side-button');
 
     const sectionObserverOptions = {
         root: null,
-        rootMargin: '-80px 0px -40% 0px', // Header offset
+        rootMargin: '-80px 0px -40% 0px',
         threshold: 0
     };
 
