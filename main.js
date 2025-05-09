@@ -28,30 +28,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     animElements.forEach(el => observer.observe(el));
 
-    // Sidebar visibility logic
+    // Sidebar visibility logic (replaced hero observer with scrollY)
     const sidebar = document.querySelector('.case-sidebar');
-    const hero = document.querySelector('.nunu-hero');
+    const sidebarShowThreshold = 100; // px from top
 
-    if (sidebar && hero) {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (sidebar.getAttribute('data-manual')) return;
-
-                if (entry.isIntersecting) {
-                    sidebar.classList.remove('visible');
-                } else {
-                    sidebar.classList.add('visible');
-                }
-            },
-            {
-                root: null,
-                threshold: 0,
-                rootMargin: "-80px 0px 0px 0px" // Adjust for fixed header
-            }
-        );
-
-        observer.observe(hero);
-    }
+    window.addEventListener('scroll', () => {
+        if (!sidebar || sidebar.getAttribute('data-manual')) return;
+        if (window.scrollY > sidebarShowThreshold) {
+            sidebar.classList.add('visible');
+        } else {
+            sidebar.classList.remove('visible');
+        }
+    });
 
     // Scroll spy (active section tracking)
     const sections = document.querySelectorAll(
@@ -82,15 +70,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Sidebar manual trigger on click + smooth scroll fix
     document.querySelectorAll('.case-sidebar .side-button').forEach(link => {
         link.addEventListener('click', (e) => {
+            if (!sidebar) return;
+
             sidebar.classList.add('visible');
             sidebar.setAttribute('data-manual', 'true');
 
-            // Hack: delay removes manual override
             setTimeout(() => {
                 sidebar.removeAttribute('data-manual');
             }, 1000);
 
-            // Hack: force scroll offset fix
             const targetId = link.getAttribute('href').substring(1);
             const targetEl = document.getElementById(targetId);
             if (targetEl) {

@@ -393,7 +393,7 @@ header {
     align-items: center;
     flex-direction: row-reverse;
     justify-content: center; /* Centers horizontally */
-    z-index: 2;
+    z-index: 9999;
     margin-left: auto;
     margin-right: auto;
     padding: 16px;    
@@ -924,9 +924,13 @@ object-fit:fill;
 /* -------------------------------------------*/
 /* #region CaseStudy Hero Components */
 .nunu-hero {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw; /* Full width */
   height: 100vh; /* Full viewport height */
   min-height: 100vh; /* Ensures it always covers the viewport */
+  z-index: 1 ;
   display: flex; /* Enables centering */
   flex-direction: column;
   align-items: center; /* Centers vertically */
@@ -935,6 +939,7 @@ object-fit:fill;
 overflow: hidden;
 background-color: #E2E7EB;
 }
+
 @media (max-width: 768px) {
   .nunu-hero {
     height: auto;
@@ -1345,7 +1350,7 @@ padding: 16px;
   background-color: var(--nunu-background-1);
 }
 .nyanga-grey-darker{
-  background-color: #E9E9EA;
+  background-color: #E2E7EB;
 }
 .nyanga-black {
   background-color: var(--nunu-dark);
@@ -2617,6 +2622,8 @@ padding-left: 52px;
 /* wrapper just provides a stacking context */
 .case-study-wrapper {
   position: relative;
+  z-index: 2;
+  margin-top: 100vh;
 }
 .sidebar-container {
   position: relative;
