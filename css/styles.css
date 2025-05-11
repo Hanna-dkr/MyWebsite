@@ -687,7 +687,7 @@ box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.02);
   position: absolute;
   bottom: 0;
   right: 0; /* ✅ Prevents overlap with text */
-  width: 50%;
+  width: 60%;
   height: auto;
   display: flex;
   justify-content: center;
@@ -696,12 +696,12 @@ box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.02);
 }
   .hero-img {
     position: absolute; 
-    width: 95%; 
-    height: auto;
+    width: 100%; 
+    height: fit-content;
     bottom: 0;
     left: 0;
 z-index: 1;
-padding-left: 40px;
+margin-left: 100px;
   }
 /* #endregion */
 /* #region Index Repetitive Components */
@@ -2934,3 +2934,57 @@ margin-bottom: 24px;
 }
 /* #endregion */
 
+/* #endregion animations*/ 
+/* ================================
+   1. Keyframes
+   ================================ */
+   @keyframes slideFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* ================================
+     2. Utility classes
+     ================================ */
+  /* Base hidden state */
+  .reveal {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+  .animate-on-scroll.in-view .reveal {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+  
+  /* Text: slide up + fade in */
+  .reveal--text {
+    animation: slideFadeUp 0.6s ease-out forwards;
+  }
+  .animate-on-scroll.in-view 
+  
+  /* Image: scale down + fade in */
+  .reveal--image {
+    animation: scaleFadeIn 0.8s ease-out forwards;
+  }
+  
+  /* Delays (you can add more as needed) */
+  .reveal.delay-1  { animation-delay: 0.2s; }
+  .reveal.delay-2  { animation-delay: 0.4s; }
+  .reveal.delay-3  { animation-delay: 0.6s; }
