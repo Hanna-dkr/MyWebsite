@@ -1080,11 +1080,11 @@ background-color: #E2E7EB;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content:flex-start;
-  align-items: flex-start;
+  justify-content:center;
+  align-items: center;
 gap: 32px ; 
 }
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .nunu-hero-cover {
     flex-direction: column-reverse;
     gap: 16px;
@@ -1098,35 +1098,24 @@ gap: 32px ;
   margin-top: 232px;
   padding-left: 16px;
   gap: 32px;
-min-width: 65%;
+min-width: 50%;
+max-width: 50%;
  z-index: 1;
  min-height: 100%;
 }
-@media (max-width: 1160px) {
+
+@media (max-width: 1023px) {
   .nunu-hero-copy {
-    margin-top: 180px; /* was 232px */
-  }
-}
-@media (max-width: 768px) {
-  .nunu-hero-copy {
-  width: 100%;
+  min-width: 100%;
   padding-left: 16px;
   padding-right: 16px;
+  text-align: center;
   margin-top: 0; /* removes excess spacing */
 }
 
 }
 .nunu-hero-header {
   display: block;
-}
-@media (max-width: 768px) {
-  .nunu-hero-copy {
-  width: 100%;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-top: 0; /* removes excess spacing */
-  text-align: center;
-}
 }
 .hero-text-block {
   display: flex;
@@ -1150,25 +1139,11 @@ gap: 16px;
   }
 }
 #nunu-hero-img {
-  overflow-x: visible;
-  padding: 0px;
-  min-width: 70%;
+display: flex;
+  padding-right: 16px;
 }
-@media (max-width: 1159px) and (min-width: 769px) {
-  #nunu-hero-img {
-    width: 50vw;
-    height: 110%; /* or whatever height looks balanced */
-  }
-  #nunu-hero-img img {
-    width: 50vw;
-    height: 110%;
-    object-fit: cover;       /* ✅ Crop vertically */
-    object-position: center;
-    display: block;
-  }
-}
+@media (max-width: 1023px) {
 
-@media (max-width: 768px) {
   #nunu-hero-img {
     width: 100v;
     height: 30vh; /* or whatever height looks balanced */
@@ -2803,8 +2778,8 @@ margin-bottom: 24px;
   top: calc(64px + 32px);
   /* center the 1160px column, then offset half of the remaining space to the left */
   left: -200px;
-  width: 170px;  
-  height: auto;                   /* your narrow nav width */
+  width: 180px;  
+  height: 100vh;                   /* your narrow nav width */
   padding: 8px;
   background-color: rgba(255, 255, 255, 0.70);/* white float-card */
   backdrop-filter: blur(20px);
