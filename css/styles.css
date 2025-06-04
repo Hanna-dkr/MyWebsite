@@ -665,6 +665,7 @@ box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.02);
   align-items: flex-start;
     gap: 8px;
 }
+
 .hero-header {
     display: block;
 }
@@ -703,6 +704,122 @@ box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.02);
 z-index: 1;
 padding-left: 40px;
   }
+  /* Tablet styles (≤1023px) */
+@media (max-width: 1023px) {
+  .hero {
+    height: auto;           /* Let it grow to fit content */
+    min-height: auto;       /* Remove forced 100vh */
+    padding-top: 120px;     /* Add breathing room above */
+    padding-bottom: 0; 
+    position: relative; /* Add breathing room below */
+  }
+
+  .hero-cover {
+    flex-direction: column; /* Stack copy above image */
+    justify-content: center;
+    align-items: center;
+    height: auto;           /* Remove forced 100vh */
+    gap: 24px;
+  
+  }
+
+  .hero-copy {
+    min-width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;     /* Center text on narrower screens */
+    align-items: center;
+    margin-top: 0;
+  }
+  #hero-p { 
+
+    font-size: 16px;
+
+}
+#chip {
+
+  font-size: 16px;
+
+}
+  .hero-buttons {
+    justify-content: center; /* Center buttons under the copy */
+  }
+ .hero-image-wrapper {
+    position: relative;     /* Normal document flow */
+    width: 50%;             /* 50% of the screen width */
+    height: auto;
+    margin-bottom: 0;       /* No gap below */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;  
+    overflow: visible;
+  }
+
+  .hero-img {
+    position: relative;
+    width: 100%;            /* Fill the 50%-wide wrapper */
+    height: auto;
+    display: block;
+    margin: 0;              /* Ensure no extra margins */
+  }
+}
+
+/* Mobile styles (≤768px) */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 56px;      
+    padding-bottom: 0;      /* No bottom padding for image */
+  }
+
+  .hero-content {
+    margin-top: 60px;
+    padding: 0 16px;        
+  }
+
+  .hero-cover {
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    height: auto;
+  }
+
+  .hero-copy {
+    gap: 24px;              
+    min-width: 100%;
+    max-width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column; 
+    gap: 12px;
+    align-items: center;
+  }
+
+  .hero-image-wrapper {
+    position: relative;     
+    width: 100%;             /* Keep the same 50% width on mobile */
+    height: auto;
+    margin-bottom: 0;       /* No gap below */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: visible;
+  }
+
+  .hero-img {
+    position: relative;
+    width: 100%;            
+    height: auto;
+    display: block;
+    margin: 0;
+  }
+}
 /* #endregion */
 /* #region Index Repetitive Components */
 section {
