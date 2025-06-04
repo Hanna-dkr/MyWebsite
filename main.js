@@ -92,6 +92,21 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    // ======== ADDED SNIPPET START: Close TOP NAV (#js-menu) on click/hashchange ========
+    const topNavMenu = document.getElementById('js-menu');
+    if (topNavMenu) {
+        // a) If the user clicks any <a> anywhere inside #js-menu, hide it immediately
+        topNavMenu.addEventListener('click', (e) => {
+            if (e.target.closest('a')) {
+                topNavMenu.classList.add('hide');
+            }
+        });
+
+        // b) Also listen for hash changes: if the URL’s hash changes, hide the menu
+        window.addEventListener('hashchange', () => {
+            topNavMenu.classList.add('hide');
+        });
+    }
 });
 
 // FAQ toggle
