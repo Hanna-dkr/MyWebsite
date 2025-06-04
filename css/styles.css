@@ -364,8 +364,8 @@ transition: linear 0.2s;
 @media (max-width: 768px) {
   .button-1,
   .button-2 {
-    padding: 12px 0;
-    min-height: 44px;
+    padding: 6px 0;
+   
     touch-action: manipulation;
   }
 }
@@ -665,7 +665,26 @@ box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.02);
   align-items: flex-start;
     gap: 8px;
 }
-
+@media (min-width: 768px) {
+  .hero-buttons > a {
+    min-width: 200px;
+    text-align: center;
+  }}
+  @media (max-width: 767px) {
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;   /* stack vertically */
+    align-items: center;      /* center buttons */
+    gap: 12px;                /* space between buttons */
+    width: 100%;              /* full container width */
+    padding: 0 8px;          /* optional side padding */
+    box-sizing: border-box;
+  }
+  .hero-buttons .button-1{
+    width: 100%;              /* span full width */
+    max-width: none;
+    justify-content: center;  /* center text inside */
+  }}
 .hero-header {
     display: block;
 }
