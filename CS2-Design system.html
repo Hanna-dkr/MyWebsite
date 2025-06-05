@@ -62,16 +62,17 @@
     </header>
     <main>
         <!--  Intro section -->
-        <div class="nunu-hero animate-on-scroll">
+        <div class="ds-hero animate-on-scroll">
             <div class="nunu-hero-content">
-                <div class="nunu-hero-cover text-focus-in">
+                <div class="nunu-hero-cover">
                     <div class="nunu-hero-copy">
                         <a href="index.html#Work" class="back-link" role="button"><span class="text">
                                 <img src="./img/back-arrow.svg" class="back-icon"> Back to case studies </span></a>
-                        <h7 id="nunu-hero-header">Designing a design system: ComUnity Developer Toolkit
+                        <h7 id="ds-hero-header-invert">Designing a design system: ComUnity Developer Toolkit
                         </h7>
-                        <div class="hero-text-block">
-                            <p class="nunu-hero-p">As a senior UX consultant at Pondo, I was brought in to help expand
+                        <div class="hero-text-block invert">
+                            <p class="nunu-hero-p invert">As a senior UX consultant at Pondo, I was brought in to help
+                                expand
                                 and embed consistent UX practice within the ComUnity Developer Toolkit team. Once
                                 onboard, I uncovered significant design and technical debt that was slowing development
                                 and creating friction across the workflow. To address this, <b>I championed and led the
@@ -100,9 +101,10 @@
                 <ul>
                     <li><a class="side-button" href="#Objective">Objective</a></li>
                     <li><a class="side-button" href="#Role">My role</a></li>
+                    <li><a class="side-button" href="#Challenges">Constraints</a></li>
                     <li><a class="side-button" href="#Approach">Approach</a></li>
                     <li><a class="side-button" href="#Execution">Execution</a></li>
-                    <li><a class="side-button" href="#Challenges">Challenges</a></li>
+
                     <li><a class="side-button" href="#Deliverables">Deliverables</a></li>
                     <li><a class="side-button" href="#Results">Results</a></li>
                     <li><a class="side-button" href="#Lessons">Lessons</a></li>
@@ -110,10 +112,10 @@
             </nav>
             <div class="case-content">
                 <!--  Objective -->
-                <section id="Objective" class="cg-section nyanga-grey">
+                <section id="Objective" class="cg-section white">
                     <div class="case-inner">
                         <div class="cg-container">
-                            <p class="cs-tagline-chip">
+                            <p class="cs-tagline-chip blue">
                                 Objective
                             </p>
                             <div class="cg-description">
@@ -126,8 +128,8 @@
                                         <p class="cg-p">ComUnity Developer Toolkit is a low-code platform for rapidly
                                             building custom digital tools. The product’s complexity—with its multi-step
                                             developer workflows—had grown over time, while UX input remained minimal.
-                                            As
-                                            the platform scaled, this led to <b>increasing usability issues,
+                                            <b>As
+                                                the platform scaled, this led to increasing usability issues,
                                                 inconsistencies, and delivery friction.</b> In response, ComUnity
                                             brought in
                                             Pondo for long-term UX support.
@@ -145,12 +147,14 @@
                                 <div class="cg-copy">
                                     <div class="cg-text-block">
                                         <p class="cg-p"> <b>I inherited a fragmented Figma file created through years of
-                                                isolated design efforts</b> - it contained 365 screens and 100+
+                                                isolated design efforts</b> - it contained 365 screens, 100+
                                             undocumented
-                                            components. Without naming conventions or reusable structures, patterns were
-                                            inconsistently applied and hard to maintain. This made handoff inefficient,
-                                            introduced recurring friction, and blocked efforts to scale design
-                                            efficiently.
+                                            components and an outdated style guide. Without naming conventions or
+                                            reusable structures, patterns were
+                                            inconsistently applied and hard to maintain. <b>This made handoff
+                                                inefficient,
+                                                introduced recurring friction, and blocked efforts to scale design
+                                                efficiently.</b>
                                         </p>
                                         <p class="cg-p"> <b>My goal was to create a design system that bridged design
                                                 and
@@ -165,16 +169,24 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="cg-broad">
+                                <div>
+                                    <img class="cs-img" src="img/DS-objective.svg" alt="Organisation diagram">
+                                </div>
+                                <p class="cg-p-italics">Above: The unstructured Figma file I inherited was blocking
+                                    efforts to scale design efficiently.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 <!--My role -->
-                <section id="Role" class="cg-section white">
+                <section id="Role" class="cg-section nyanga-grey">
                     <div class="case-inner animate-on-scroll">
-                        <div class="cg-container  text-focus-in">
+                        <div class="cg-container">
                             <div class="cg-description">
-                                <p class="cs-tagline-chip">My role in the team</p>
+                                <p class="cs-tagline-chip blue">My role in the team</p>
                                 <h2 class="cg-title">Building design foundations in a developer-led team
                                 </h2>
                             </div>
@@ -182,9 +194,10 @@
                             <div class="cg-cover">
                                 <div class="cg-copy">
                                     <div class="cg-text-block">
-                                        <p class="cg-p"><b>As a Senior UX Consultant at Pondo</b>, I worked alongside
-                                            our UX
-                                            Lead to expand design capacity on the ComUnity team. While the UX Lead
+                                        <p class="cg-p"><b>As a Senior UX Consultant at Pondo, I worked alongside
+                                                our UX
+                                                Lead to expand design capacity on the ComUnity team.</b> While the UX
+                                            Lead
                                             focused on strategy, I was embedded day-to-day in a developer-led product
                                             team—collaborating with a product manager (also acting as CTO and product
                                             marketing lead), a delivery manager, and an engineering team with one
@@ -213,34 +226,35 @@
                                                 with peer developers to ensure usability and relevance</li>
                                         </ul>
                                     </div>
+                                    <div class="cg-text-block">
+                                        <p class="cg-p"><b>Within this setup, I was responsible for translating design
+                                                goals
+                                                into
+                                                practical systems—helping the team move from ad-hoc decisions to shared
+                                                standards
+                                                that improved both speed and quality.</b>
+
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="cg-broad">
-                                <p class="cg-p">Within this setup, I was responsible for translating design goals into
-                                    practical systems—helping the team move from ad-hoc decisions to shared standards
-                                    that improved both speed and quality.
-
-                                </p>
-                            </div>
-                            <div class="cg-broad">
-                                <p class="cg-p-italics">Organisation diagram
-                                </p>
-
                                 <div>
-                                    <img class="cs-img" src="img/DS-cover.svg" alt="Organisation diagram">
-
-
+                                    <img class="cs-img" src="img/DS-role.svg" alt="Organisation diagram">
                                 </div>
+                                <p class="cg-p-italics">Organisation diagram indicating key decision makers in the
+                                    developer-lead product team.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </section>
                 <!--challenges-->
-                <section id="Challenges" class="cg-section nyanga-grey">
+                <section id="Challenges" class="cg-section white">
                     <div class="case-inner  animate-on-scroll">
-                        <div class="cg-container  text-focus-in">
+                        <div class="cg-container">
                             <div class="cg-description">
-                                <p class="cs-tagline-chip">Project challenges</p>
+                                <p class="cs-tagline-chip blue">Constraints and challenges</p>
                                 <h2 class="cg-title">Balancing foundational work with fast-paced delivery
                                 </h2>
                             </div>
@@ -261,15 +275,16 @@
                                             <img class="cg-img-chall-1" src="./img/DS-cover.svg" alt="Overlay Image">
                                         </div>
                                         <div class="card-content">
-                                            <h5 class="cg-subheader">A culture of delivery without UX process</h5>
+                                            <h5 class="cg-subheader">Feature delivery was a priority</h5>
                                             <ul>
-                                                <li class="bullet">Design was valued, but process often took a back seat
-                                                    to delivery pace</li>
                                                 <li class="bullet">The team was initially cautious about whether a
                                                     design system would support or slow delivery</li>
                                                 <li class="bullet">We worked from existing personas and earlier in-house
                                                     research, as no new user research was commissioned during this phase
                                                 </li>
+                                                <li class="bullet">Design was valued, but dedicating time to process
+                                                    required advocacy—and was often deprioritised in favour of delivery
+                                                    speed.</li>
 
                                             </ul>
                                         </div>
@@ -282,14 +297,15 @@
                                         </div>
                                         <div class="card-content">
 
-                                            <h5 class="cg-subheader">Legacy design debt</h5>
+                                            <h5 class="cg-subheader">Managing legacy design debt</h5>
                                             <ul>
-                                                <li class="bullet">I inherited a large, unstructured Figma file—396
+                                                <li class="bullet-card">I inherited a large, unstructured Figma file—365
                                                     screens and 108 components with no documentation or naming
                                                     conventions</li>
-                                                <li class="bullet">The current implementation did not include responsive
+                                                <li class="bullet-card">The current implementation did not consider
+                                                    responsivity
                                                     or accessibility </li>
-                                                <li class="bullet">Figma was the sole design tool, requiring all
+                                                <li class="bullet-card">Figma was the sole design tool, requiring all
                                                     systemisation, documentation, and collaboration to happen within
                                                     that environment
                                                 </li>
@@ -719,119 +735,6 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!--design principles-->
-                <section class="cg-section nyanga-grey-darker design-response">
-                    <div class="case-inner  animate-on-scroll">
-                        <div class="cg-container text-focus-in">
-                            <div class="cg-description">
-                                <p class="cs-tagline-chip-outline">Design principles informed by research:</p>
-                                <h2 class="cg-title">Putting traders at the heart of the renewal proposal</h2>
-                                <p><b> We created design principles to help stakeholders operationalise the research
-                                        findings. Our team also used them to guide our participatory design
-                                        process.</b>
-                                </p>
-                                <p> I
-                                    collaborated with
-                                    the lead urban designer to
-                                    develop six principles that advocated for the needs of traders at an
-                                    infrastructural,
-                                    policy and implementation level.</p>
-                            </div>
-
-
-                            <div class="carousel">
-                                <button class="carousel-arrow carousel-prev" aria-label="Previous">‹</button>
-                                <div class="carousel-window">
-                                    <div class="carousel-track">
-                                        <!-- card 1 -->
-                                        <div class="carousel-item">
-                                            <div class="design-card">
-                                                <div class="design-card-header">
-                                                    <h5>Implement the renewal in phases</h5>
-                                                </div>
-                                                <img src="./img/Nunu-dp1.png" alt="Phased upgrade diagram">
-                                                <p>Plan and negotiate the phasing of construction with traders, so
-                                                    that
-                                                    trade is continuous.</p>
-                                                <p>Ensure that alternative locations are available during
-                                                    construction
-                                                    to minimise disruption.</p>
-                                            </div>
-                                        </div>
-                                        <!-- card 2 -->
-                                        <div class="carousel-item">
-                                            <div class="design-card">
-                                                <div class="design-card-header">
-                                                    <h5>Support compliance at existing trade locations</h5>
-                                                </div>
-                                                <img src="./img/Nunu-dp2.png" alt="Relocation strategy diagram">
-                                                <p>Only relocate traders when essential.</p>
-                                                <p>Co-design infrastructural improvements to ensure that they are
-                                                    suitable
-                                                    and align with operations.</p>
-                                            </div>
-                                        </div>
-                                        <!-- card 3 -->
-                                        <div class="carousel-item">
-                                            <div class="design-card">
-                                                <div class="design-card-header">
-                                                    <h5>Create a destination market with infrastructure</h5>
-                                                </div>
-                                                <img src="./img/Nunu-dp3.png" alt="Central market concept">
-                                                <p>Create a high-visibility marketplace at the interchange
-                                                    accommodating
-                                                    complex needs.</p>
-                                                <p>Trader feedback on layouts is critical.</p>
-                                            </div>
-                                        </div>
-                                        <!-- card 4 -->
-                                        <div class="carousel-item">
-                                            <div class="design-card">
-                                                <div class="design-card-header">
-                                                    <h5>Well-lit, pedestrian routes designed for safety</h5>
-                                                </div>
-                                                <img src="./img/Nunu-dp4.png" alt="Safety illustration">
-                                                <p>Deliver lighting, designated pedestrian zones, and passive
-                                                    surveillance.</p>
-                                                <p>Support trade with small public spaces.</p>
-                                            </div>
-                                        </div>
-                                        <!-- card 5 -->
-                                        <div class="carousel-item">
-                                            <div class="design-card">
-                                                <div class="design-card-header">
-                                                    <h5>Adjust policy to support reality on the ground</h5>
-                                                </div>
-                                                <img src="./img/Nunu-dp5.png" alt="Policy graphic">
-                                                <p>Include flexible permitting options for shared ownership.</p>
-                                                <p>Propose rental-bay sizes matching actual needs.</p>
-                                            </div>
-                                        </div>
-                                        <!-- card 6 -->
-                                        <div class="carousel-item">
-                                            <div class="design-card">
-                                                <div class="design-card-header">
-                                                    <h5>Ongoing participation and partnership</h5>
-                                                </div>
-                                                <img src="./img/Nunu-dp6.png" alt="Partnership icon">
-                                                <p>Embed long-term community engagement in the management model.</p>
-                                                <p>Reframe the city’s role as partner, not just regulator.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="carousel-arrow carousel-next" aria-label="Next">›</button>
-
-                                <div class="carousel-dots">
-                                    <span class="dot active"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
                                 </div>
                             </div>
                         </div>
