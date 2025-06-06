@@ -447,6 +447,9 @@ nav{
     border-radius: 16px;
   height: 64px;
 }
+.DS-page nav{
+     background-color: rgba(255, 255, 255, 0.70);
+}
 
 .nav-tabs {
     display: flex;
@@ -2220,6 +2223,9 @@ b {
 }
 .invert{
   color: var(--white);
+}
+.invert b {
+  color: var(--white) !important;
 }
 .cg-p b{
   color: var(--nunu-dark);
