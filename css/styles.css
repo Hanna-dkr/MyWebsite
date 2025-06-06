@@ -1678,6 +1678,10 @@ padding: 16px;
 .cs-img {
   width: 100%;
 }
+.cs-img.round {
+  border-radius: 8px;
+}
+
 .cs-img-deliver
 {
   width: 100%;
@@ -1764,6 +1768,9 @@ padding: 16px;
 }
 .medium{
   background-color: #B5C1CE;
+}
+.DS-gradient.round {
+border-radius: 8px;
 }
 /* --Containers---- */
 .cg-container{
@@ -1955,6 +1962,9 @@ font-style: italic;
   align-items: stretch;
   gap: 24px;
 width: 100%;
+}
+.cg-broad.bottom-pad{
+  padding-bottom: 24px;
 }
 .delivery-stack{
   display: flex;
