@@ -2866,11 +2866,11 @@ margin-bottom: 24px;
   margin-bottom: 16px;
 }
 .lessons-timeline.lessons-timeline--blue::before {
-  background: #4C4F56; /* whatever new color you want for the vertical line */
+  background: #262C59; /* whatever new color you want for the vertical line */
 }
 
 .lessons-timeline.lessons-timeline--blue .step-icon {
-  background: #4C4F56; /* same (or different) override for each icon */
+  background: #262C59; /* same (or different) override for each icon */
   color: #fff;         /* ensure number/text remains legible */
 }
 /* Inverted text on dark background */
