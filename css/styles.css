@@ -1461,7 +1461,6 @@ display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 40px;
-  margin-left: auto;
   padding: 16px;
   font-size: 20x;
   font-weight: 600;
@@ -1981,7 +1980,25 @@ border-radius: 8px;
     padding: 0;
   }
 }
+.cg-approach {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--white);
+  box-sizing: border-box;
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .cg-approach {
+    width: 100%;
+    max-width: 100%;
 
+  }
+}
 .cg-copy-deliver {
   display: flex;
   flex: 1 1 0;
@@ -2515,6 +2532,7 @@ margin-bottom: 24px;
     grid-column: 1 / -1;
   }
 }
+
 /* #endregion */
 /* #region INDEX Contact me */
 .contact-details {
@@ -2844,7 +2862,17 @@ margin-bottom: 24px;
 .step-content h4 {
   margin-bottom: 8px;
 }
+.step-content h5 {
+  margin-bottom: 16px;
+}
+.lessons-timeline.lessons-timeline--blue::before {
+  background: #4C4F56; /* whatever new color you want for the vertical line */
+}
 
+.lessons-timeline.lessons-timeline--blue .step-icon {
+  background: #4C4F56; /* same (or different) override for each icon */
+  color: #fff;         /* ensure number/text remains legible */
+}
 /* Inverted text on dark background */
 .invert { color: var(--white) !important; }
 /* #endregion */
