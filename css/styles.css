@@ -1757,6 +1757,11 @@ padding: 16px;
 .nyanga-black {
   background-color: var(--nunu-dark);
 }
+.DS-gradient {
+  overflow: hidden;
+  background: url(../img/DS-cover.svg) no-repeat center center;
+  background-size: cover;
+}
 .medium{
   background-color: #B5C1CE;
 }
@@ -1819,6 +1824,10 @@ padding: 16px;
   background-color: #262C59; 
   color: var(--white);      /* top/bottom 4px, left/right 12px */
 }
+.cs-tagline-chip.white {
+  background-color: #ffffff; 
+  color: var(--nunu-dark);      /* top/bottom 4px, left/right 12px */
+}
 @media (max-width: 768px) {
 .cs-tagline-chip {
   font-size: 18px;
@@ -1857,6 +1866,13 @@ display: flex;
 text-align: center;
 line-height: 1.2;
 color: var(--nunu-dark);
+}
+.cg-title-italics{
+  display: flex;
+text-align: center;
+line-height: 1.2;
+color: var(--nunu-dark);
+font-style: italic;
 }
 .cg-title-left{
   display: flex;
@@ -2876,7 +2892,15 @@ margin-bottom: 24px;
 /* Inverted text on dark background */
 .invert { color: var(--white) !important; }
 /* #endregion */
+.emphasised {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 16px;
+background-color:#262C59;
+border-radius: 8px;
 
+}
 
 
 /* #region Hero Animations */
