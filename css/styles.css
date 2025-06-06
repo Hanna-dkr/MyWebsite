@@ -1990,6 +1990,9 @@ width: 100%;
 padding: 24px;
 border-radius: 8px;
 }
+.cg-broad-deliver.extra-pad {
+  padding: 60px;
+}
 .cg-copy {
   display: flex;
   flex: 1 1 0;
