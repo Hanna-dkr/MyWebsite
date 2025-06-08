@@ -1387,6 +1387,41 @@ overflow: hidden;
     padding-bottom: 0px; /* prevents image overlap */
   }
 }
+.alert-hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  min-height: 100vh; /* Ensures it always covers the viewport */
+  z-index:  1;
+  display: flex; /* Enables centering */
+  flex-direction: column;
+  align-items: center; /* Centers vertically */
+  justify-content: center; /* Centers horizontally */
+  text-align:left; 
+overflow: hidden;
+  background: url(../img/Alert-hero.png) no-repeat center center;
+  background-size: cover;
+}
+@media (max-width: 1023px) {
+  .alert-hero {
+    position: relative;   /* let it scroll normally */
+    width: 100%;
+    height: auto;         /* grow to fit content */
+    min-height: auto;     /* remove forced 100vh */
+    padding-top: 0px;   /* or whatever spacing you prefer */
+    padding-bottom: 120px;
+    background: url(../img/DS-cover.svg) no-repeat center center;
+  background-size: cover;
+  }
+}
+@media (max-width: 768px) {
+  .alert-hero {
+    padding-top: 0px; /* room for header */
+    padding-bottom: 40px; /* prevents image overlap */
+  }
+}
 
 .nunu-hero-content {
   display: flex;
@@ -1547,6 +1582,12 @@ display: flex;
   background-color: rgba(255, 255, 255, 0.20);
   border-radius: 16px;
 }
+@media (max-width: 1023px) {
+  .nunu-scroller{
+    align-self: center;
+  }
+}
+
 @media (max-width: 768px) {
   .nunu-scroller {
     font-size: 16px;
@@ -3433,3 +3474,10 @@ width: 160px;
 }
 /* #endregion */
 
+.eliminate{
+  opacity: 0;  
+}
+@media (max-width: 1023px) {
+  .eliminate{
+    opacity: 100;
+  }}
