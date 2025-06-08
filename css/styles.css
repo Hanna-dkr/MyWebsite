@@ -2679,6 +2679,16 @@ margin-bottom: 24px;
   color: var(--nunu-dark);
   margin: 0;
 }
+/* Change the vertical line on the timeline wrapper */
+.rp-timeline.rp-timeline--blue::before {
+  background: #262C59;
+}
+
+/* Change every icon inside that blue‐timeline */
+.rp-timeline.rp-timeline--blue .rp-icon {
+  background: #262C59;
+  color: #fff;
+}
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
