@@ -290,6 +290,7 @@ h1 {
     -webkit-user-select: none;
     touch-action: manipulation;
   }
+
 .button-1 span {
   position: relative;
   z-index: 10;
@@ -322,6 +323,7 @@ h1 {
   transform: scale(0.98);
   transition: linear 0.2s;
 }
+ 
 
 /* secondary button */
 .button-2 {
@@ -1611,7 +1613,7 @@ display: flex;
 }
 .nunu-scroller--white {
   color: var(--white);
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 .nunu-scroller--white .scroller-arrow {
   filter: invert(1) brightness(1.5);
@@ -1892,6 +1894,11 @@ padding: 16px;
   background: url(../img/DS-cover.svg) no-repeat center center;
   background-size: cover;
 }
+.DS-gradient-dark{
+  overflow: hidden;
+  background: url(../img/DS-dark-grad.svg) no-repeat center center;
+  background-size: cover;
+}
 .medium{
   background-color: #B5C1CE;
 }
@@ -2049,9 +2056,12 @@ font-style: italic;
     align-items: center;
     gap: 20px;
   }
+
+  
 .cg-cover {
   display: flex;
   flex-direction: row;
+  
   justify-content: space-between; 
   align-items: stretch;
   gap: 24px;
@@ -2066,6 +2076,7 @@ font-style: italic;
     gap: 32px;
   }
 }
+
 .cg-cover.padding{
   margin-top: 40px;
   gap: 24px;
@@ -2170,6 +2181,16 @@ border-radius: 8px;
   align-items: stretch;  
   min-width: 100%;
 }
+ 
+    .cg-cards-grow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;         /* horizontal + vertical spacing */
+  align-items: stretch; /* force all cards to the same height */
+  width: 100%;
+  margin: 0 auto;    /* center if you want */
+}
+
 .cg-card{
   display: flex;
   flex-direction: column;
@@ -2181,6 +2202,57 @@ border-radius: 8px;
   border-radius: 8px;
   background-color: var(--white);
   box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.05);
+}
+.cg-card-outline{
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc((100% - 48px) / 3);
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 32px;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.05);
+}
+.cg-cards-grow .cg-card-outline {
+  flex: 0 0 calc((100% - 2*24px)/3);
+}
+.cg-card-outline.cg-card-outline--empty{
+  border: none;
+}
+.cg-card-words{
+  display: flex;
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+}
+
+
+
+/* 2 per row on tablet */
+@media (max-width: 1159px) and (min-width: 769px) {
+  .cg-cards-grow .cg-card-outline {
+    flex: 0 0 calc((100% - 1*24px)/2);
+  }
+}
+
+/* 1 per row on mobile */
+@media (max-width: 768px) {
+  .cg-cards-grow .cg-card-outline {
+    flex: 0 0 100%;
+  }
+  .cg-card-outline{
+    justify-content: center;
+    align-items: center;
+  }
+  .cg-card-words{
+  font-size: 20px;
+  text-align: center;
+  align-self: center;
+
+}
 }
 .cg-card--grey {
  overflow: hidden;
@@ -2237,7 +2309,7 @@ width: 40px;
     min-width: 100%;
     height: auto;
   }
-  .cg-card {
+  .cg-card, .cg-card-outline {
     /* subtract one gap (24px) and divide by 2 */
     display: flex;
     flex: 0 0 100%;
@@ -2271,7 +2343,7 @@ width: 40px;
     min-width: 100%;
     height: auto;
   }
-  .cg-card {
+  .cg-card, .cg-card-outline {
     /* subtract one gap (24px) and divide by 2 */
     display: flex;
     flex: 0 0 100%;
