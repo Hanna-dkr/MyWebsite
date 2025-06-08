@@ -1368,7 +1368,7 @@ background-color: #E2E7EB;
   justify-content: center; /* Centers horizontally */
   text-align:left; 
 overflow: hidden;
-  background: url(../img/DS-special-cover.svg) no-repeat center center;
+  background: url(../img/2xDS-special-cover.png) no-repeat center center;
   background-size: cover;
 }
 @media (max-width: 1023px) {
