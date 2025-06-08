@@ -399,11 +399,17 @@ transition: linear 0.2s;
   cursor: pointer;
   transition: 0.4s linear;
 }
+  .back-link--menu{
+    margin-bottom: 32px;
+  }
 .back-link:hover{
   background-color: #B0E9D1;
   transform: scale(1.05);
   transition: 0.4s linear;
 }
+  .back-link--menu:hover{
+   background-color: var(--gray);
+  }
 .back-icon{
   display: inline-block;
   width: 16px;
@@ -1500,7 +1506,7 @@ max-width: 50%;
 width: 90%;
  z-index: 1;
  background: url(../img/DS-cover.svg);
-  box-shadow: 0px 10px 40px 0px rgba(50, 83, 121, 0.70); 
+  box-shadow: 0px 10px 40px 0px rgba(50, 83, 121, 0.50); 
 }
 
 @media (max-width: 1023px) {
@@ -3403,7 +3409,7 @@ border-radius: 8px;
   color: var(--black-1);
 }
 .case-sidebar .side-button.active {
-  background-color: var(--gray);
+  background-color:var(--gray);
   font-weight: 700;
   color: var(--black-1);
 }
