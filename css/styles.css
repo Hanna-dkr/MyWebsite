@@ -2235,6 +2235,11 @@ border-radius: 8px;
 @media (max-width: 1159px) and (min-width: 769px) {
   .cg-cards-grow .cg-card-outline {
     flex: 0 0 calc((100% - 1*24px)/2);
+    padding: 24px;
+  }
+  .cg-cards-grow .cg-card-outline.cg-card-outline--empty {
+    flex: 0 0 calc((100% - 1*24px)/2);
+    padding: 16px;
   }
 }
 
@@ -2242,6 +2247,10 @@ border-radius: 8px;
 @media (max-width: 768px) {
   .cg-cards-grow .cg-card-outline {
     flex: 0 0 100%;
+    padding: 16px;
+  }
+  .cg-cards-grow .cg-card-outline.cg-card-outline--empty {
+    padding: 8px;
   }
   .cg-card-outline{
     justify-content: center;
@@ -2249,8 +2258,7 @@ border-radius: 8px;
   }
   .cg-card-words{
   font-size: 20px;
-  text-align: center;
-  align-self: center;
+ justify-content: stretch;
 
 }
 }

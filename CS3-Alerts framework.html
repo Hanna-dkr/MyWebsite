@@ -457,7 +457,7 @@
 
 
                 <!--deliverables-->
-                <section id="Deliverables" class="cg-section DS-gradient-dark">
+                <section id="Deliverables" class="cg-section DS-gradient">
                     <div class="case-inner  animate-on-scroll">
                         <div class="cg-container">
                             <!-- Header -->
@@ -581,11 +581,22 @@
                                 <h2 class="cg-title">2. Mapping system events clarified alerting touch points and user
                                     needs</h2>
                             </div>
+                            <div class="cg-broad">
+
+                                <img class="cs-img round" src="img/Alert-execution 2.png"
+                                    alt="System diagram and early wireframes">
+
+                                <p class="cg-p-italics">We used this system diagram in engineering workshops to align on
+                                    backend processes. Wireframes were created to iterate on designs for the four key
+                                    alerts interface areas
+                                    identified.
+                                </p>
+                            </div>
                             <div class="cg-cover">
                                 <div class="cg-copy">
                                     <div class="cg-text-block">
-                                        <p class="cg-p"><b>Cataloguing events across the system’s hierarchy
-                                                revealed:</b></p>
+                                        <h4 class="cg-subheader"><b>Cataloguing events across the system’s hierarchy
+                                                revealed:</b></h4>
                                         <ul>
                                             <li class="bullet-1">Event alerts could easily overwhelm
                                                 users if surfaced unfiltered.</li>
@@ -602,9 +613,9 @@
                                 </div>
                                 <div class="cg-copy">
                                     <div class="cg-text-block">
-                                        <p class="cg-p"><b>Four main user touchpoints within the interface were
+                                        <h4 class="cg-subheader"><b>Four main user touchpoints within the interface were
                                                 identified:</b>
-                                        </p>
+                                        </h4>
                                         <ul>
                                             <li class="bullet-1">Receiving an alert (how you receive it)</li>
                                             <li class="bullet-1">Configuring what is shown (user control)
@@ -615,14 +626,137 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="cg-section nyanga-grey">
+                    <div class="case-inner">
+                        <div class="cg-container">
+                            <div class="cg-description">
+                                <h2 class="cg-title">3. Our early designs missed the mark - there was misalignment
+                                    between conceptual and mental models</h2>
+                            </div>
                             <div class="cg-broad">
 
-                                <img class="cs-img round" src="img/Alert-execution 2.png"
+                                <img class="cs-img round" src="img/Alert-execution 3.png"
                                     alt="System diagram and early wireframes">
 
-                                <p class="cg-p-italics">We used this system diagram in engineering workshops to align on
-                                    backend processes. Wireframes were created to iterate on designs for the four areas
-                                    identified.
+                                <p class="cg-p-italics">Process work and workshop diagrams - Our early design (top left)
+                                    did not cater to the one-to-many relationship between events and alerts. We
+                                    iterated on component and screen designs to accommodate this relationship.
+                                </p>
+                            </div>
+                            <div class="cg-cover">
+                                <div class="cg-copy">
+                                    <div class="cg-text-block">
+                                        <ul>
+                                            <li class="bullet-1">
+                                                <h4 class="cg-subheader">Naming confusion:</h4>
+                                                <p class="cg-p"> Walkthroughs with engineers revealed that they had a
+                                                    different understanding to us of what terms like “event,” “alert,”
+                                                    and “notification” meant.
+                                                </p>
+                                            </li>
+                                            <li class="bullet-1">
+                                                <h4 class="cg-subheader"> The deeper issue - conceptual mismatch:</h4>
+                                                <p class="cg-p"> We'd assumed
+                                                    that users would only dig into the event log occasionally, and
+                                                    surfacing alerts (with filtering) would reduce cognitive load. But
+                                                    developers needed direct, persistent visibility to raw events—not
+                                                    just the alerts built from them.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cg-copy">
+                                    <div class="cg-text-block">
+                                        <ul>
+                                            <li class="bullet-1">
+                                                <h4 class="cg-subheader">We had also misunderstood the relationship
+                                                    between
+                                                    alerts and events.</h4>
+                                                <p class="cg-p"> Multiple alerts could stem from the same event, and
+                                                    those needed to be tracked over time. Our system buried that logic.
+                                                </p>
+                                            </li>
+                                            <li class="bullet-1">
+                                                <h4 class="cg-subheader"> In response, we shifted the model:</h4>
+                                                <p class="cg-p"> Instead of alerts
+                                                    being the top-level objects, events became the primary item. Each
+                                                    event in the notification centre now includes a history of related
+                                                    alerts—aligning with how developers think and work.</p>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="cg-section white">
+                    <div class="case-inner">
+                        <div class="cg-container">
+                            <div class="cg-description">
+                                <h2 class="cg-title">4. Bridging the gap between design guidelines and implementation
+                                </h2>
+                            </div>
+                            <div class="cg-broad">
+                                <img class="cs-img round" src="img/Alert-laptop.png" alt="Implemented mockup">
+
+                                <p class="cg-p-italics">The shipped design.
+                                </p>
+                            </div>
+                            <div class="cg-broad">
+
+                                <div class="cg-text-block">
+                                    <h4 class="cg-subheader">The were challenges with consistent alert message structure
+                                        during implementation:</h4>
+                                    <p class="cg-p">We had created clear communication guidelines for alert
+                                        messages—covering structure, tone, priority, and when to show what.</p>
+                                </div>
+                            </div>
+                            <div class="cg-cover">
+                                <div class="cg-copy">
+                                    <div class="cg-text-block">
+                                        <h4 class="cg-subheader">The problem?</h4>
+                                        <p class="cg-p">Disconnect between frontend guidance and how messages were
+                                            generated
+                                            in the backend.</p>
+                                        <p class="cg-p">A workshop with the lead engineer revealed key constraints in
+                                            how alert content was structured programmatically. </p>
+                                    </div>
+                                </div>
+                                <div class="cg-copy">
+                                    <img class="cs-img round" src="img/Alert-fail.png"
+                                        alt="Screenshots from design system">
+
+                                    <p class="cg-p-italics">A workshop to clarify backend processes shed light on why
+                                        implementation wasn't aligning with the design guidelines - it was about the way
+                                        that alert details were categorised and structured.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="cg-copy">
+                                <div class="cg-text-block">
+                                    <h4 class="cg-subheader">That insight shifted our
+                                        thinking:</h4>
+                                    <p class="cg-p">We realised we’d need to audit and categorise system messages to
+                                        extend the guidelines in a way that aligned with how alerts are built. This
+                                        work is now planned as a follow-on phase, aimed at making guidance easier to
+                                        apply and messages more consistent across the platform.</p>
+                                </div>
+                            </div>
+                            <div class="cg-broad">
+
+                                <img class="cs-img round" src="img/Alerts-execution 5.png"
+                                    alt="Screenshots from design system">
+
+                                <p class="cg-p-italics">I created extensive documentation on alert UI and communication.
+                                    This will be refined and workshopped with engineers in the future for implementation
+                                    alignment.
                                 </p>
                             </div>
                         </div>
@@ -644,30 +778,45 @@
                                     <div class="lesson-step">
                                         <div class="step-icon">1</div>
                                         <div class="step-content">
-                                            <h4 class="cg-subheader">The MVP was shipped on time with a functional
-                                                alerting system:</h4>
-                                            <p class="cg-p">This made the platform observable and increasing its value
-                                                to users.</p>
+                                            <h4 class="cg-subheader">Delivered on time, with a strategic foundation</h4>
+                                            <p class="cg-p">The MVP shipped on schedule, introducing a working alerting
+                                                system that aligned with observability goals. But more than that, it
+                                                laid a framework for scalable design decisions, avoiding short-term
+                                                hacks and future design debt.</p>
                                         </div>
                                     </div>
                                     <div class="lesson-step">
                                         <div class="step-icon">2</div>
                                         <div class="step-content">
-                                            <h4 class="cg-subheader">The team shifted from feature-level thinking to a
-                                                more integrated, framework-driven approach:
+                                            <h4 class="cg-subheader">Strengthened product architecture and
+                                                future-readiness:
                                             </h4>
-                                            <p class="cg-p">They considered alerts within the wider information
-                                                architecture.</p>
+                                            <p class="cg-p">By advocating for a system-wide approach early on, we helped
+                                                the team shift from feature-by-feature thinking to a more integrated,
+                                                sustainable architecture. This influenced how other planned features
+                                                were scoped and sequenced on the roadmap.</p>
                                         </div>
                                     </div>
 
                                     <div class="lesson-step">
                                         <div class="step-icon">3</div>
                                         <div class="step-content">
-                                            <h4 class="cg-subheader">Communication guidelines for alert and error
-                                                messaging were introduced</h4>
-                                            <p class="cg-p">This laid the foundation for more consistent user-facing
-                                                feedback.</p>
+                                            <h4 class="cg-subheader">Built trust and shared language between design and
+                                                engineering</h4>
+                                            <p class="cg-p">Regular workshops and iterative collaboration helped close
+                                                the gap between frontend UX and backend processes. We surfaced complex
+                                                requirements early, preventing misalignment at build-time and giving
+                                                developers clear guidance in the design system.</p>
+                                        </div>
+                                    </div>
+                                    <div class="lesson-step">
+                                        <div class="step-icon">4</div>
+                                        <div class="step-content">
+                                            <h4 class="cg-subheader">Extended design system maturity</h4>
+                                            <p class="cg-p">The design system grew to include alerting components,
+                                                states, naming conventions, and message hierarchy—making it easier to
+                                                maintain consistency across future features. This work enabled faster
+                                                implementation and less ambiguity for dev teams.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -677,14 +826,19 @@
                             </div>
                             <div class="cg-broad">
                                 <div class="emphasised">
-                                    <h4 class="cg-title-italics invert">Still to come: validation with real users...
+                                    <h4 class="cg-title-italics invert">Still to come: Establishing impact on UX through
+                                        validation with real users...
                                     </h4>
-                                    <p class="cg-p-italics invert">Still to come: validation with real users
-                                        While the framework is in place and shipping brought immediate value, it still
-                                        needs to be tested in context. Without direct feedback from real developers
-                                        using the system in their workflows, we can’t be sure the conceptual model truly
-                                        aligns with their needs. The current design is a strong foundation—but iteration
-                                        will be essential.</p>
+                                    <p class="cg-p-italics invert">
+                                        While the framework is solid and our choices around visibility, timing, and
+                                        messaging helped reduce unnecessary distraction,
+                                        the alerting model still needs real-world testing
+                                        with external users before we can assume success. Internal QA and engineering
+                                        feedback shaped the MVP—but
+                                        full validation is essential to understand if our conceptual model was
+                                        appropriate. The groundwork
+                                        is there; the proof will come in how developers actually use and respond to the
+                                        system.</p>
                                 </div>
 
 
@@ -766,8 +920,8 @@
                                             </li>
                                             <li class="bullet-1 invert">
                                                 <div class="cg-text-block">
-                                                    <h4 class="cg-subheader invert">Close Collaboration with Engineers
-                                                        Improved the Outcome:
+                                                    <h4 class="cg-subheader invert">Close collaboration with engineers
+                                                        improved the outcome:
                                                     </h4>
                                                     <p class="cg-p invert">Working closely with the engineering team
                                                         made the alerts framework stronger. Their insight helped refine
