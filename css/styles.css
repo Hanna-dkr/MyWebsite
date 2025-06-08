@@ -2130,6 +2130,16 @@ border-radius: 8px;
 .cg-broad-deliver.extra-pad {
   padding: 60px;
 }
+@media (max-width: 1023px){
+  .cg-broad-deliver.extra-pad{
+    padding: 28px;
+}}
+  
+@media (max-width: 768px) {
+  .cg-broad-deliver.extra-pad{
+    padding: 16px;
+  }
+}
 .cg-copy {
   display: flex;
   flex: 1 1 0;
@@ -3580,3 +3590,6 @@ width: 160px;
   .cs-img-spaced{
     margin-top: 32px;
   }
+  .cg-p.invert b {
+  color: var(--nunu-accent) !important;
+}
