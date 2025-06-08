@@ -1325,7 +1325,7 @@ object-fit:fill;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Full width */
+  width: 100%; /* Full width */
   height: 100vh; /* Full viewport height */
   min-height: 100vh; /* Ensures it always covers the viewport */
   z-index:  1;
@@ -1343,13 +1343,13 @@ background-color: #E2E7EB;
     width: 100%;
     height: auto;         /* grow to fit content */
     min-height: auto;     /* remove forced 100vh */
-    padding-top: 120px;   /* or whatever spacing you prefer */
+    padding-top: 0px;   /* or whatever spacing you prefer */
     padding-bottom: 120px;
   }
 }
 @media (max-width: 768px) {
   .nunu-hero {
-    padding-top: 56px; /* room for header */
+    padding-top: 0px; /* room for header */
     padding-bottom: 40px; /* prevents image overlap */
   }
 }
@@ -1357,7 +1357,7 @@ background-color: #E2E7EB;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Full width */
+  width: 100%; /* Full width */
   height: 100vh; /* Full viewport height */
   min-height: 100vh; /* Ensures it always covers the viewport */
   z-index:  1;
@@ -1367,7 +1367,7 @@ background-color: #E2E7EB;
   justify-content: center; /* Centers horizontally */
   text-align:left; 
 overflow: hidden;
-  background: url(../img/DS-cover.svg) no-repeat center center;
+  background: url(../img/DS-special-cover.svg) no-repeat center center;
   background-size: cover;
 }
 @media (max-width: 1023px) {
@@ -1377,13 +1377,13 @@ overflow: hidden;
     height: auto;         /* grow to fit content */
     min-height: auto;     /* remove forced 100vh */
     padding-top: 120px;   /* or whatever spacing you prefer */
-    padding-bottom: 120px;
+    padding-bottom: 0px;
   }
 }
 @media (max-width: 768px) {
   .ds-hero {
     padding-top: 56px; /* room for header */
-    padding-bottom: 40px; /* prevents image overlap */
+    padding-bottom: 0px; /* prevents image overlap */
   }
 }
 
@@ -1397,6 +1397,19 @@ overflow: hidden;
 @media (max-width: 768px) {
   .nunu-hero-content {
     padding: 0 16px;
+    gap: 24px; /* if needed */
+  }
+}
+.ds-hero-content {
+  display: flex;
+  max-width: 1160px;
+  flex-direction: column;
+  justify-content: center;
+  align-items:  center;
+}
+@media (max-width: 768px) {
+  .ds-hero-content {
+    padding: 0 ;
     gap: 24px; /* if needed */
   }
 }
@@ -1419,7 +1432,7 @@ gap: 32px ;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 232px;
+
   padding-left: 16px;
   gap: 32px;
 min-width: 50%;
@@ -1435,6 +1448,32 @@ max-width: 50%;
   padding-right: 16px;
   text-align: center;
   margin-top: 0; /* removes excess spacing */
+}}
+.ds-hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:  0 auto;
+  padding: 24px;
+  border-radius: 24px;
+  gap: 32px;
+  text-align: center;
+   min-width: auto;
+  max-width: none;
+width: 90%;
+ z-index: 1;
+ background: url(../img/DS-cover.svg)
+}
+
+@media (max-width: 1023px) {
+  .ds-hero-copy {
+  min-width: 100%;
+ padding: 24px;
+  text-align: center;
+  margin-top: 0; /* removes excess spacing */
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 }
@@ -1460,22 +1499,22 @@ gap: 16px;
 #nunu-hero-img {
 display: flex;
   padding-right: 16px;
-  border-radius: 16px;
 }
 #nunu-hero-img img {
-  border-radius: 16px;
+  border-radius: 0;
 }
 
 @media (max-width: 1023px) {
 
   #nunu-hero-img {
     width: 100v;
-    height: 30vh; /* or whatever height looks balanced */
+    height: 40vh; /* or whatever height looks balanced */
     padding: 0px;
+    margin-top: 0px;
   }
   #nunu-hero-img img {
     width: 100vw;
-    height: 30vh;
+    height: 40vh;
     object-fit: cover;       /* ✅ Crop vertically */
     object-position: center;
     display: block;
