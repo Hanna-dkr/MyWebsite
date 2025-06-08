@@ -456,6 +456,7 @@ nav{
     width: 1160px;
     background-color: rgba(255, 255, 255, 0.40);
     backdrop-filter: blur(20px);
+      box-shadow: 0px 12px 24px 0px rgba(32, 32, 32, 0.03);
     border-radius: 16px;
   height: 64px;
 }
@@ -1463,7 +1464,8 @@ max-width: 50%;
   max-width: none;
 width: 90%;
  z-index: 1;
- background: url(../img/DS-cover.svg)
+ background: url(../img/DS-cover.svg);
+  box-shadow: 0px 10px 40px 0px rgba(50, 83, 121, 0.70); 
 }
 
 @media (max-width: 1023px) {
@@ -1474,6 +1476,7 @@ width: 90%;
   margin-top: 0; /* removes excess spacing */
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+  box-shadow: 0px 10px 40px 0px rgba(50, 83, 121, 0.70); 
 }
 
 }
@@ -3299,8 +3302,9 @@ border-radius: 8px;
  border-bottom-right-radius: 0px;
  border-bottom-left-radius: 0px;
  border-top-left-radius: 0px;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.90);
   backdrop-filter: blur(20px);
+  box-shadow: 0px 12px 24px 0px rgba(32, 32, 32, 0.05);
   /* only round the right side now */
   z-index: 1000;
   transition: width 0.4s ease, left 0.6s ease;
