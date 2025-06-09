@@ -286,7 +286,8 @@ h1 {
     background: linear-gradient(45deg, var(--card-1), var(--prim-2));
     color: var(--white);
     overflow: hidden;
-    user-select: none;
+    -moz-user-select: none;
+         user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
   }
@@ -336,7 +337,8 @@ h1 {
   background: linear-gradient(45deg, var(--black-1), var(--black-2));
   color: var(--white);
   overflow: hidden;
-  user-select: none;
+  -moz-user-select: none;
+       user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
@@ -463,7 +465,8 @@ header {
 nav{
     width: 1160px;
     background-color: rgba(255, 255, 255, 0.40);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
       box-shadow: 0px 12px 24px 0px rgba(32, 32, 32, 0.03);
     border-radius: 16px;
   height: 64px;
@@ -512,7 +515,8 @@ nav{
     padding-left: 16px;
     padding-right: 16px;
     text-decoration: none;
-    user-select: none;
+    -moz-user-select: none;
+         user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation; 
     position: fixed;
@@ -538,7 +542,8 @@ nav{
     padding-left: 16px;
     padding-right: 16px;
     text-decoration: none;
-    user-select: none;
+    -moz-user-select: none;
+         user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation; 
 }
@@ -698,12 +703,11 @@ box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.05);
    z-index: 1;
 }
 .hero-tagline {
-  display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    gap: 24px;
+   display: flex;
+  flex-direction: row;    /* lay out side-by-side */
+  flex-wrap: wrap;        /* allow wrapping when there’s no space */
+  align-items: center;    /* vertically center the items */
+  gap: 8px 4px;          
 }
 .hero-buttons {
     display: flex;
@@ -3190,82 +3194,44 @@ border-radius: 8px;
   }
 }
 .focus-in-expand {
-	-webkit-animation: focus-in-expand 0.3s linear 1s both;
-	        animation: focus-in-expand 0.3s linear 1s both;        
-}
-@-webkit-keyframes focus-in-expand {
-  0% {
-    letter-spacing: -0.5em;
-    -webkit-filter: blur(6px);
-            filter: blur(6px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
+	animation: focus-in-expand 0.3s linear 1s both;        
 }
 @keyframes focus-in-expand {
   0% {
     letter-spacing: -0.5em;
-    -webkit-filter: blur(6px);
-            filter: blur(6px);
+    filter: blur(6px);
     opacity: 0;
   }
   100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
 .pulsate-fwd {
-	-webkit-animation: pulsate-fwd 0.7s ease-in-out 1.3s 6 both;
-	        animation: pulsate-fwd 0.7s ease-in-out 1.3s 6 both;
-}
-@-webkit-keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+	animation: pulsate-fwd 0.7s ease-in-out 1.3s 6 both;
 }
 @keyframes pulsate-fwd {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    transform: scale(1.1);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 /* global scroll animations (activates parent on scroll) */
 .animate-on-scroll {
   opacity: 0;
-  -webkit-filter: blur(1px);
-            filter: blur(1px);
-            -webkit-transform: translateZ(-80px);
+  filter: blur(1px);
             transform: translateZ(-80px);
             transition: opacity 0.3s ease-out;
 }
 .animate-on-scroll.in-view {
   opacity: 1;
-  -webkit-filter: blur(0);
-          filter: blur(0);
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);}
+  filter: blur(0);
+  transform: translateZ(0);}
 
 /* New animations */
 
@@ -3421,7 +3387,8 @@ border-radius: 8px;
  border-bottom-left-radius: 0px;
  border-top-left-radius: 0px;
   background-color: rgba(255,255,255,0.90);
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   box-shadow: 0px 12px 24px 0px rgba(32, 32, 32, 0.05);
   /* only round the right side now */
   z-index: 1000;
@@ -3459,7 +3426,8 @@ border-radius: 8px;
   line-height: 1;
   padding: 16px;
   text-decoration: none;
-  user-select: none;
+  -moz-user-select: none;
+       user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;  
 }
