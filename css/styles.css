@@ -1166,6 +1166,7 @@ transition: 0.2s linear;
   display: flex;
   flex-wrap: wrap;
 justify-content: space-between;
+align-items: stretch;
   width: 100%;
   max-width: 1160px;
   gap: 24px;
@@ -1173,6 +1174,7 @@ justify-content: space-between;
 
 @media (max-width: 768px){
   .work-gallery{
+    
     flex-direction: column;
     max-width: 100%;
     gap: 16px;
@@ -1183,7 +1185,7 @@ justify-content: space-between;
   background-color: var(--white);
   border-radius: 4px;
   padding: 16px;
-  height: 600px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1193,16 +1195,16 @@ justify-content: space-between;
 
 @media (max-width: 1023px){
   .work-card{
-    flex-direction: column;
-    max-height: 1300px;
+    flex: 0 0 calc(50% - 12px);
+  
    
   }}
 @media (max-width: 768px){
   .work-card{
-    flex-direction: column;
     max-width: 100%;
     max-height: 600px;
    box-shadow: 0px 8px 16px 0px rgba(32, 32, 32, 0.20); 
+      flex: 0 0 100%;
   }}
 .work-card:hover {
   background-color: #ffffff;
@@ -1273,8 +1275,8 @@ transition: linear 0.2s;
 
 }
 .work-card-img{
-  max-height: 50%;
-  min-height: 50%;;
+  flex: 0 0 300px;
+height: 300px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1298,14 +1300,19 @@ transition: linear 0.2s;
 }
 
 .work-card-img img{
-  max-width: 100%;
-object-fit:fill;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .work-tagline {
   display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+}
+.work-card > h6,
+.work-card > .work-tagline {
+  flex: 1 1 auto;
 }
 .work-chip {
   display: inline block;
