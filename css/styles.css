@@ -1425,7 +1425,7 @@ overflow: hidden;
   justify-content: center; /* Centers horizontally */
   text-align:left; 
 overflow: hidden;
-  background: url(../img/Alert-hero.png) no-repeat center center;
+  background: url(../img/alert-hero.png) no-repeat center center;
   background-size: cover;
 }
 @media (max-width: 1023px) {
